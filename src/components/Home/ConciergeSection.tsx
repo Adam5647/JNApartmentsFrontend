@@ -24,7 +24,7 @@ export default function ConciergeSection() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:jnapartments2025@gmail.com"
+              href="mailto:jnapartments2025@gmail.com?subject=Concierge%20inquiry"
               className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3.5 font-body text-sm font-medium text-white hover:bg-white/10 hover:border-brand-400/50 transition-colors"
             >
               <FiMail className="w-4 h-4 text-brand-400" />

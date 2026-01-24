@@ -78,10 +78,10 @@ export default function BookingsPage() {
               <p className="text-slate-300 text-sm">
                 Questions?{" "}
                 <a
-                  href="mailto:jnapartments2025@gmail.com"
+                  href="mailto:jnapartments2025@gmail.com?subject=Concierge%20inquiry"
                   className="text-brand-400 hover:text-brand-300 underline"
                 >
-                  Contact our concierge
+                  Email Concierge
                 </a>{" "}
                 or{" "}
                 <a
