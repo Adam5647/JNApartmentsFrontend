@@ -16,15 +16,8 @@ export default function ExperiencesSection() {
         className="relative w-full overflow-hidden bg-slate-950 border-t border-white/[0.06]"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/30 to-slate-950" aria-hidden />
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-          }}
-          aria-hidden
-        />
 
-        <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-14 sm:py-16 lg:py-20">
+        <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-10 xs:py-12 sm:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto">
             {/* Floating orbs */}
             <div className="absolute top-20 right-0 h-96 w-96 rounded-full bg-brand-500/5 blur-3xl" aria-hidden />
@@ -354,6 +347,8 @@ export default function ExperiencesSection() {
                 <img
                   src={selectedExperience.image}
                   alt={selectedExperience.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />

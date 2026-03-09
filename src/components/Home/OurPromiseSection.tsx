@@ -38,7 +38,7 @@ export default function OurPromiseSection() {
       id="testimonials"
       className="relative w-full overflow-hidden bg-slate-900/50 border-t border-white/[0.06]"
     >
-      <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-14 sm:py-16 lg:py-20">
+      <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-10 xs:py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto">
           {/* Floating orbs */}
           <div className="absolute top-32 -left-40 h-80 w-80 rounded-full bg-brand-500/5 blur-3xl" aria-hidden />

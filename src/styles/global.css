@@ -6,12 +6,17 @@ html {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   @apply bg-slate-950 text-slate-100 antialiased;
   width: 100%;
   min-width: 0;
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
+  padding-top: env(safe-area-inset-top, 0);
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
 *, *::before, *::after {
@@ -22,4 +27,33 @@ body {
   min-height: 100vh;
   width: 100%;
   min-width: 0;
+}
+
+@layer utilities {
+  .min-touch {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* Reduce scroll lag: let browser skip off-screen content */
+  .scroll-contain {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 300px;
+  }
+}
+
+/* Suites, Gallery, Services, Testimonials: hero auto height on phone, fixed from sm */
+.hero-page-auto-phones {
+  /* Phone: height follows content */
+}
+@media (min-width: 640px) {
+  .hero-page-auto-phones {
+    height: min(42vh, 340px);
+    min-height: min(42vh, 340px);
+  }
+}
+@media (min-width: 768px) {
+  .hero-page-auto-phones {
+    height: min(42vh, 380px);
+    min-height: min(42vh, 380px);
+  }
 }

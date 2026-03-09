@@ -594,8 +594,8 @@ export const testimonialsGuestStories = [
   },
 ];
 
-/** Hero background image for Testimonials page (local asset) */
-export const testimonialsHeroImage = asset("WEBSITE PHOTO/JNA-21.jpg");
+/** Hero background image for Testimonials page (distinct from Suites hero) */
+export const testimonialsHeroImage = asset("WEBSITE PHOTO/JNA-27.jpg");
 
 /** Hero background image for Bookings page (local asset) */
 export const bookingsHeroImage = asset(

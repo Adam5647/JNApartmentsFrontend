@@ -31,7 +31,7 @@ import {
 } from "../data/content";
 
 const CONTAINER =
-  "w-full max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
+  "w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 const serviceIconMap: Record<string, IconType> = {
   "front-desk": FiUser,
@@ -80,11 +80,10 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <Nav />
-      <main className="pt-20">
-        {/* Hero */}
+      <main className="pt-16 xs:pt-20">
+        {/* Hero — auto height on phone (content-driven), fixed from sm */}
         <section
-          className="relative flex min-h-0 flex-col justify-center overflow-hidden py-12 md:py-16"
-          style={{ height: "min(42vh, 380px)" }}
+          className="hero-page-auto-phones relative flex min-h-0 flex-col justify-center overflow-hidden py-8 xs:py-10 sm:py-12 md:py-16"
           aria-label="Services overview"
         >
           <div
@@ -98,7 +97,7 @@ export default function ServicesPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl text-white"
+              className="font-display text-3xl xs:text-4xl md:text-5xl lg:text-6xl text-white"
             >
               Services &amp; experiences
             </motion.h1>
@@ -106,7 +105,7 @@ export default function ServicesPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mt-4 text-slate-300 text-lg max-w-xl mx-auto"
+              className="mt-2 xs:mt-4 text-slate-300 text-base xs:text-lg max-w-xl mx-auto"
             >
               From 24/7 reception to housekeeping and transport help—everything
               you need for a comfortable stay in Shillong.
@@ -115,15 +114,15 @@ export default function ServicesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35 }}
-              className="mt-6 flex flex-wrap justify-center gap-6 sm:gap-8"
+              className="mt-4 xs:mt-6 flex flex-wrap justify-center gap-4 xs:gap-6 sm:gap-8"
               aria-label="Key highlights"
             >
               {heroStats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <p className="font-body text-lg font-semibold text-white">
+                  <p className="font-body text-base xs:text-lg font-semibold text-white">
                     {stat.value}
                   </p>
-                  <p className="mt-0.5 text-slate-400 text-sm font-body">
+                  <p className="mt-0.5 text-slate-400 text-xs xs:text-sm font-body">
                     {stat.label}
                   </p>
                 </div>
@@ -131,7 +130,7 @@ export default function ServicesPage() {
             </motion.div>
             <Link
               to="/"
-              className="mt-8 inline-flex font-body text-sm text-slate-400 hover:text-white transition-colors"
+              className="mt-4 xs:mt-6 sm:mt-8 inline-flex font-body text-sm text-slate-400 hover:text-white transition-colors min-touch items-center"
             >
               <span aria-hidden>←</span> Back to Home
             </Link>
@@ -171,6 +170,8 @@ export default function ServicesPage() {
                       <img
                         src={exp.image}
                         alt=""
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </div>

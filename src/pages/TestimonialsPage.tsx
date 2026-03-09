@@ -80,12 +80,11 @@ export default function TestimonialsPage() {
     <div className="min-h-screen bg-slate-950 text-slate-100 font-body">
       <StarGradientDefs />
       <Nav />
-      <main className="pt-20">
+        <main className="pt-16 xs:pt-20">
 
-        {/* ── HERO ────────────────────────────────────────────────────── */}
+        {/* Hero — auto height on phone (content-driven), fixed from sm */}
         <section
-          className="relative flex min-h-0 flex-col justify-center overflow-hidden py-12 md:py-16"
-          style={{ height: "min(42vh, 380px)" }}
+          className="hero-page-auto-phones relative flex min-h-0 flex-col justify-center overflow-hidden py-8 xs:py-10 sm:py-12 md:py-16"
         >
           <div
             className="absolute inset-0 bg-cover bg-no-repeat"
@@ -98,17 +97,17 @@ export default function TestimonialsPage() {
           {/* Gradient overlay – lighter so hero image stays more visible */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/60 to-slate-950/75" aria-hidden />
 
-          <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
+          <div className="relative z-10 w-full max-w-6xl mx-auto px-4 xs:px-5 sm:px-6 lg:px-8 text-center">
+            <h1 className="font-display text-3xl xs:text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
               Guest Experiences
             </h1>
-            <p className="mt-4 text-slate-300 text-lg max-w-xl mx-auto">
+            <p className="mt-2 xs:mt-4 text-slate-300 text-base xs:text-lg max-w-xl mx-auto">
               Discover what our guests say about their stays at JN Apartments. Real stories from real
               people who have experienced the warmth of Meghalaya hospitality.
             </p>
             <Link
               to="/"
-              className="mt-8 inline-flex items-center gap-2 font-body text-sm text-slate-400 hover:text-white transition-colors"
+              className="mt-4 xs:mt-6 sm:mt-8 inline-flex items-center gap-2 font-body text-sm text-slate-400 hover:text-white transition-colors min-touch"
             >
               <span aria-hidden>←</span> Back to Home
             </Link>
@@ -117,7 +116,7 @@ export default function TestimonialsPage() {
 
         {/* ── RATING BREAKDOWN ──────────────────────────────────────── */}
         <section className="py-16 border-t border-white/5">
-          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-6xl mx-auto px-4 xs:px-5 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <h2 className="font-display text-3xl md:text-4xl text-white mb-3">
                 Guest Satisfaction
@@ -155,7 +154,7 @@ export default function TestimonialsPage() {
 
         {/* ── GUEST REVIEWS ─────────────────────────────────────────── */}
         <section className="py-20 border-t border-white/5">
-          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-6xl mx-auto px-4 xs:px-5 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <h2 className="font-display text-3xl md:text-4xl text-white mb-3">Guest Reviews</h2>
               <p className="text-slate-400">Hear directly from our valued guests</p>
@@ -181,6 +180,8 @@ export default function TestimonialsPage() {
                     <img
                       src={review.image}
                       alt={review.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-13 h-13 w-12 h-12 rounded-full object-cover ring-2 ring-brand-500/30 flex-shrink-0"
                     />
                     <div className="min-w-0">
@@ -220,7 +221,7 @@ export default function TestimonialsPage() {
 
         {/* ── GUEST STORIES ─────────────────────────────────────────── */}
         <section className="py-20 border-t border-white/5">
-          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-6xl mx-auto px-4 xs:px-5 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <h2 className="font-display text-3xl md:text-4xl text-white mb-3">Guest Stories</h2>
               <p className="text-slate-400">In-depth stories from our memorable guests</p>
@@ -237,6 +238,8 @@ export default function TestimonialsPage() {
                     <img
                       src={story.image}
                       alt={story.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
@@ -258,7 +261,7 @@ export default function TestimonialsPage() {
 
         {/* ── CTA ───────────────────────────────────────────────────── */}
         <section className="py-20 border-t border-white/5">
-          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-6xl mx-auto px-4 xs:px-5 sm:px-6 lg:px-8">
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-900/60 via-slate-900 to-slate-900 border border-brand-500/20 p-10 md:p-16 text-center">
               {/* Decorative blobs */}
               <div className="absolute -top-20 -left-20 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />

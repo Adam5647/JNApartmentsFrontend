@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NAV_LINKS = [
   { label: "Suites", to: "/suites" },
@@ -9,9 +9,13 @@ const NAV_LINKS = [
 ] as const;
 
 export default function Nav() {
+  const { pathname } = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const isHome = pathname === "/";
+  const showSolidNav = scrolled || !isHome;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -22,13 +26,13 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-slate-950/90 shadow-lg shadow-black/10 backdrop-blur-md"
+        showSolidNav
+          ? "bg-slate-950/95 shadow-lg shadow-black/10 md:backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
       <nav
-        className="mx-auto flex w-full max-w-[100rem] items-center justify-between gap-6 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 h-20"
+        className="mx-auto flex w-full max-w-[100rem] items-center justify-between gap-4 xs:gap-6 px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 h-16 xs:h-20"
         aria-label="Main"
       >
         {/* Logo */}
@@ -50,15 +54,25 @@ export default function Nav() {
 
         {/* Center links - desktop */}
         <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:flex lg:items-center lg:gap-0">
-          {NAV_LINKS.map(({ label, to }) => (
-            <Link
-              key={to}
-              to={to}
-              className="relative px-5 py-2.5 font-body text-base font-medium tracking-wide text-slate-400 hover:text-white transition-colors focus:outline-none focus:text-white rounded"
-            >
-              {label}
-            </Link>
-          ))}
+          {NAV_LINKS.map(({ label, to }) => {
+            const isActive = pathname === to;
+            return (
+              <Link
+                key={to}
+                to={to}
+                className={`relative px-5 py-2.5 font-body text-base font-medium tracking-wide transition-colors focus:outline-none focus:text-white rounded ${
+                  isActive
+                    ? "text-white"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                {label}
+                {isActive && (
+                  <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-6 h-0.5 rounded-full bg-brand-400" aria-hidden />
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Right: Login + Book Now - desktop */}
@@ -80,7 +94,7 @@ export default function Nav() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition lg:hidden focus:outline-none"
+          className="flex min-touch h-12 w-12 xs:h-11 xs:w-11 items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition lg:hidden focus:outline-none touch-manipulation"
           onClick={() => setMobileOpen((o) => !o)}
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
@@ -101,35 +115,41 @@ export default function Nav() {
       {/* Mobile menu */}
       <div
         id="mobile-menu"
-        className={`border-t border-white/[0.06] bg-slate-950/98 backdrop-blur-xl lg:hidden transition-all duration-200 ${
+        className={`border-t border-white/[0.06] bg-slate-950/98 lg:hidden transition-all duration-200 ${
           mobileOpen ? "max-h-[calc(100vh-4rem)] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
         }`}
         role="region"
         aria-label="Mobile navigation"
         aria-hidden={!mobileOpen}
       >
-        <div className="px-6 py-5 flex flex-col gap-0.5">
-          {NAV_LINKS.map(({ label, to }) => (
-            <Link
-              key={to}
-              to={to}
-              className="py-4 font-body text-base font-medium text-slate-300 hover:text-white transition-colors border-b border-white/[0.06] last:border-0 focus:outline-none"
-              onClick={() => setMobileOpen(false)}
-            >
-              {label}
-            </Link>
-          ))}
-          <div className="flex flex-col gap-2 pt-6 mt-2 border-t border-white/[0.08]">
+        <div className="px-4 xs:px-5 sm:px-6 py-4 xs:py-5 flex flex-col gap-0.5">
+          {NAV_LINKS.map(({ label, to }) => {
+            const isActive = pathname === to;
+            return (
+              <Link
+                key={to}
+                to={to}
+                className={`min-touch flex items-center py-4 font-body text-base font-medium transition-colors border-b border-white/[0.06] last:border-0 focus:outline-none touch-manipulation ${
+                  isActive ? "text-white" : "text-slate-300 hover:text-white"
+                }`}
+                onClick={() => setMobileOpen(false)}
+              >
+                {label}
+                {isActive && <span className="ml-2 text-brand-400" aria-hidden>●</span>}
+              </Link>
+            );
+          })}
+          <div className="flex flex-col gap-2 pt-4 xs:pt-6 mt-2 border-t border-white/[0.08]">
             <Link
               to="/login"
-              className="py-4 text-center font-body text-base font-medium text-slate-300 hover:text-white transition-colors focus:outline-none"
+              className="min-touch flex items-center justify-center py-4 font-body text-base font-medium text-slate-300 hover:text-white transition-colors focus:outline-none touch-manipulation"
               onClick={() => setMobileOpen(false)}
             >
               Login
             </Link>
             <Link
               to="/bookings"
-              className="inline-flex items-center justify-center py-4 font-body text-base font-semibold text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors focus:outline-none"
+              className="min-touch inline-flex items-center justify-center py-4 font-body text-base font-semibold text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors focus:outline-none touch-manipulation"
               onClick={() => setMobileOpen(false)}
             >
               Book Now

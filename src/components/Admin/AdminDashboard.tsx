@@ -81,7 +81,7 @@ export default function AdminDashboard() {
       {/* Meghalaya Tourism Real-Time Bookings Widget */}
       <MTBookingsWidget />
 
-      <div className="rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+      <div className="rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 px-4 xs:px-5 sm:px-6 md:px-8 py-6 sm:py-8">
         <h2 className="font-display text-xl sm:text-2xl">Dashboard</h2>
         <p className="mt-2 text-xs sm:text-sm text-slate-300/70">Operations overview and quick actions.</p>
         {loading ? (
@@ -97,7 +97,7 @@ export default function AdminDashboard() {
       </div>
 
       <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
-        <div className="rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 px-4 sm:px-6 md:px-8 py-5 sm:py-6">
+        <div className="rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 px-4 xs:px-5 sm:px-6 md:px-8 py-5 sm:py-6">
           <h3 className="font-display text-lg sm:text-xl">Quick links</h3>
           <ul className="mt-3 sm:mt-4 space-y-2.5 sm:space-y-3 text-xs sm:text-sm">
             {quickLinks.map((link) => (
@@ -116,7 +116,7 @@ export default function AdminDashboard() {
           </ul>
         </div>
 
-        <div className="rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 px-4 sm:px-6 md:px-8 py-5 sm:py-6">
+        <div className="rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 px-4 xs:px-5 sm:px-6 md:px-8 py-5 sm:py-6">
           <h3 className="font-display text-lg sm:text-xl">Quick AI itinerary draft</h3>
           <p className="mt-2 text-xs sm:text-sm text-slate-300/80">Lightweight template to reply with itinerary details.</p>
           <div className="mt-3 sm:mt-4 grid gap-2.5 sm:gap-3">

@@ -144,7 +144,7 @@ export default function LoginSignUpPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <Nav />
-      <main className="pt-24 pb-20 px-4 sm:px-6 md:px-8">
+      <main className="pt-20 xs:pt-24 pb-16 xs:pb-20 px-4 xs:px-5 sm:px-6 md:px-8">
         <div className="w-full max-w-[26rem] mx-auto">
           {/* Decorative header */}
           <div className="text-center mb-8">

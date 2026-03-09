@@ -4,7 +4,7 @@ import { FiMail, FiPhone } from "react-icons/fi";
 export default function ConciergeSection() {
   return (
     <section className="relative w-full overflow-hidden bg-slate-900/50 border-t border-white/[0.06]">
-      <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-14 sm:py-16 lg:py-20">
+      <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-10 xs:py-12 sm:py-16 lg:py-20">
         <motion.div
           className="max-w-2xl mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}

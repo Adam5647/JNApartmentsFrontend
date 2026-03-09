@@ -10,7 +10,7 @@ const SOCIAL = [
 export default function Footer() {
   return (
     <footer className="relative w-full bg-slate-950 border-t border-white/[0.06]">
-      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-10 sm:py-12 lg:py-14">
+      <div className="w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-8 xs:py-10 sm:py-12 lg:py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {/* Brand + address */}
           <div className="lg:col-span-2">

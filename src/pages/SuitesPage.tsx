@@ -21,7 +21,7 @@ import Footer from "../components/Home/Footer";
 import MtbButton from "../components/Home/MtbButton";
 import { suites, suiteInventory, suitesHeroImage } from "../data/content";
 
-const CONTAINER = "w-full max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
+const CONTAINER = "w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 const roomTypes = [
   {
@@ -102,11 +102,10 @@ export default function SuitesPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <Nav />
-      <main className="pt-20">
-        {/* Hero */}
+      <main className="pt-16 xs:pt-20">
+        {/* Hero — auto height on phone (content-driven), fixed from sm */}
         <section
-          className="relative flex min-h-0 flex-col justify-center overflow-hidden py-12 md:py-16"
-          style={{ height: "min(42vh, 380px)" }}
+          className="hero-page-auto-phones relative flex min-h-0 flex-col justify-center overflow-hidden py-8 xs:py-10 sm:py-12 md:py-16"
           aria-label="Suites overview"
         >
           <div
@@ -121,17 +120,10 @@ export default function SuitesPage() {
             className="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/60 to-slate-950/75"
             aria-hidden
           />
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-            }}
-            aria-hidden
-          />
           <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-24 bg-gradient-to-b from-transparent via-brand-400/50 to-transparent hidden lg:block" />
           <div className={`relative z-10 ${CONTAINER} text-center`}>
             <motion.h1
-              className="font-display text-4xl md:text-5xl lg:text-6xl text-white font-medium"
+              className="font-display text-3xl xs:text-4xl md:text-5xl lg:text-6xl text-white font-medium"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -139,7 +131,7 @@ export default function SuitesPage() {
               Our Suites
             </motion.h1>
             <motion.p
-              className="mt-4 text-slate-300 text-lg max-w-xl mx-auto"
+              className="mt-2 xs:mt-4 text-slate-300 text-base xs:text-lg max-w-xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -149,35 +141,35 @@ export default function SuitesPage() {
             </motion.p>
             {/* Stats in hero */}
             <motion.div
-              className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-3xl mx-auto"
+              className="mt-4 xs:mt-6 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 xs:gap-4 sm:gap-6 md:gap-8 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.3 }}
               aria-label="Suite highlights"
             >
-              <div className="flex flex-col items-center text-center gap-1">
-                <FiHome className="w-5 h-5 text-brand-400 shrink-0" aria-hidden />
-                <span className="font-body text-lg font-semibold text-white">
+              <div className="flex flex-col items-center text-center gap-0.5 xs:gap-1">
+                <FiHome className="w-4 h-4 xs:w-5 xs:h-5 text-brand-400 shrink-0" aria-hidden />
+                <span className="font-body text-sm xs:text-lg font-semibold text-white">
                   {suiteInventory.baseUnits}
                 </span>
-                <span className="text-slate-400 text-sm font-body">Suites</span>
+                <span className="text-slate-400 text-xs xs:text-sm font-body">Suites</span>
               </div>
-              <div className="flex flex-col items-center text-center gap-1">
-                <FiGrid className="w-5 h-5 text-brand-400 shrink-0" aria-hidden />
-                <span className="font-body text-lg font-semibold text-white">1BHK & 2BHK</span>
-                <span className="text-slate-400 text-sm font-body">Convertible</span>
+              <div className="flex flex-col items-center text-center gap-0.5 xs:gap-1">
+                <FiGrid className="w-4 h-4 xs:w-5 xs:h-5 text-brand-400 shrink-0" aria-hidden />
+                <span className="font-body text-sm xs:text-lg font-semibold text-white">1BHK & 2BHK</span>
+                <span className="text-slate-400 text-xs xs:text-sm font-body">Convertible</span>
               </div>
-              <div className="flex flex-col items-center text-center gap-1">
-                <FiDollarSign className="w-5 h-5 text-brand-400 shrink-0" aria-hidden />
-                <span className="font-body text-lg font-semibold text-white">
+              <div className="flex flex-col items-center text-center gap-0.5 xs:gap-1">
+                <FiDollarSign className="w-4 h-4 xs:w-5 xs:h-5 text-brand-400 shrink-0" aria-hidden />
+                <span className="font-body text-sm xs:text-lg font-semibold text-white">
                   ₹{suiteInventory.oneBhkRate.toLocaleString()} – ₹{suiteInventory.twoBhkRate.toLocaleString()}
                 </span>
-                <span className="text-slate-400 text-sm font-body">Per night</span>
+                <span className="text-slate-400 text-xs xs:text-sm font-body">Per night</span>
               </div>
-              <div className="flex flex-col items-center text-center gap-1">
-                <FiLayers className="w-5 h-5 text-brand-400 shrink-0" aria-hidden />
-                <span className="font-body text-lg font-semibold text-white">2</span>
-                <span className="text-slate-400 text-sm font-body">Floors</span>
+              <div className="flex flex-col items-center text-center gap-0.5 xs:gap-1">
+                <FiLayers className="w-4 h-4 xs:w-5 xs:h-5 text-brand-400 shrink-0" aria-hidden />
+                <span className="font-body text-sm xs:text-lg font-semibold text-white">2</span>
+                <span className="text-slate-400 text-xs xs:text-sm font-body">Floors</span>
               </div>
             </motion.div>
             <motion.div
@@ -187,7 +179,7 @@ export default function SuitesPage() {
             >
               <Link
                 to="/"
-                className="mt-8 inline-flex items-center gap-2 font-body text-slate-400 hover:text-white transition-colors text-sm"
+                className="mt-4 xs:mt-6 sm:mt-8 inline-flex items-center gap-2 font-body text-slate-400 hover:text-white transition-colors text-sm min-touch"
               >
                 <span aria-hidden>←</span> Back to Home
               </Link>
@@ -264,7 +256,7 @@ export default function SuitesPage() {
 
         {/* Room types & pricing */}
         <section
-          className="py-14 md:py-20 border-t border-white/10"
+          className="scroll-contain py-14 md:py-20 border-t border-white/10"
           aria-label="Room types and pricing"
         >
           <div className={CONTAINER}>
@@ -352,6 +344,8 @@ export default function SuitesPage() {
                             <img
                               src={room.images[0]}
                               alt={`${room.type} — main view`}
+                              loading="lazy"
+                              decoding="async"
                               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                             />
                             <span className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -373,6 +367,8 @@ export default function SuitesPage() {
                               <img
                                 src={img}
                                 alt=""
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-full object-cover"
                               />
                             </button>
@@ -599,7 +595,7 @@ export default function SuitesPage() {
                     setLightboxIndex(i);
                   }}
                 >
-                  <img src={src} alt="" className="w-full h-full object-cover" />
+                  <img src={src} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>

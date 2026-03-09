@@ -8,7 +8,7 @@ export default function CommunitySection() {
       id="community"
       className="relative w-full overflow-hidden bg-slate-950 border-t border-white/[0.06]"
     >
-      <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-14 sm:py-16 lg:py-20">
+      <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-10 xs:py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto grid gap-6 sm:gap-8 md:gap-10 lg:grid-cols-2 lg:items-center">
           {/* Left: header + highlight cards (git style) */}
           <div>
@@ -87,6 +87,8 @@ export default function CommunitySection() {
               <img
                 src={communityImage}
                 alt="Hotel guests enjoying communal spaces"
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>

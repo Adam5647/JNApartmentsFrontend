@@ -20,7 +20,7 @@ export default function BookingsPage() {
             aria-hidden
           />
           <div className="absolute inset-0 bg-slate-950/75" aria-hidden />
-          <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 text-center">
+          <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 text-center">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white">
               Book Your <span className="text-brand-200">Stay</span>
             </h1>
@@ -44,7 +44,7 @@ export default function BookingsPage() {
 
         {/* Why book through MT */}
         <section className="py-14 border-t border-white/10">
-          <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+          <div className="w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
             <h2 className="font-display text-2xl md:text-3xl text-white mb-8 text-center">
               Why Book Through Meghalaya Tourism?
             </h2>

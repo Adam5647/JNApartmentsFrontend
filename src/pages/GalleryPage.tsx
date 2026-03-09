@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMaximize2, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -12,7 +12,7 @@ import {
 } from "../data/content";
 
 const CONTAINER =
-  "w-full max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
+  "w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 /** Gallery categories: each uses a distinct set of images (no duplicates). */
 const galleryCategories = [
@@ -42,19 +42,38 @@ const galleryCategories = [
   },
 ];
 
-const fadeUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-40px" },
-  transition: { duration: 0.5 },
-};
+/** Only render children when the section is near the viewport (reduces DOM and paint during scroll). */
+function LazySection({
+  id,
+  children,
+  placeholderMinHeight = 800,
+}: {
+  id: string;
+  children: React.ReactNode;
+  placeholderMinHeight?: number;
+}) {
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
-const staggerItem = {
-  initial: { opacity: 0, y: 16 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-30px" },
-  transition: { duration: 0.4 },
-};
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setInView(true);
+      },
+      { rootMargin: "400px", threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} style={{ minHeight: inView ? undefined : placeholderMinHeight }}>
+      {inView ? children : null}
+    </div>
+  );
+}
 
 export default function GalleryPage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -93,11 +112,10 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <Nav />
-      <main className="pt-20">
-        {/* Hero */}
+      <main className="pt-16 xs:pt-20">
+        {/* Hero — auto height on phone (content-driven), fixed from sm */}
         <section
-          className="relative flex min-h-0 flex-col justify-center overflow-hidden py-12 md:py-16"
-          style={{ height: "min(42vh, 380px)" }}
+          className="hero-page-auto-phones relative flex min-h-0 flex-col justify-center overflow-hidden py-8 xs:py-10 sm:py-12 md:py-16"
           aria-label="Gallery overview"
         >
           <div
@@ -109,60 +127,38 @@ export default function GalleryPage() {
             className="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/60 to-slate-950/75"
             aria-hidden
           />
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-            }}
-            aria-hidden
-          />
           <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-24 bg-gradient-to-b from-transparent via-brand-400/50 to-transparent hidden lg:block" />
           <div className={`relative z-10 ${CONTAINER} text-center`}>
-            <motion.h1
-              className="font-display text-4xl md:text-5xl lg:text-6xl text-white"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <h1 className="font-display text-3xl xs:text-4xl md:text-5xl lg:text-6xl text-white">
               Photo <span className="text-brand-200">Gallery</span>
-            </motion.h1>
-            <motion.p
-              className="mt-4 text-slate-300 text-lg max-w-xl mx-auto"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
+            </h1>
+            <p className="mt-2 xs:mt-4 text-slate-300 text-base xs:text-lg max-w-xl mx-auto">
               Explore our suites, amenities, and surroundings.
-            </motion.p>
-            <motion.div
-              className="mt-8 flex flex-wrap items-center justify-center gap-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-            >
+            </p>
+            <div className="mt-4 xs:mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-3 xs:gap-4">
               <a
                 href="#featured"
-                className="inline-flex items-center gap-2 font-body text-sm font-medium text-white bg-brand-500/90 hover:bg-brand-500 px-5 py-2.5 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-slate-950"
+                className="min-touch inline-flex items-center gap-2 font-body text-sm font-medium text-white bg-brand-500/90 hover:bg-brand-500 px-5 py-2.5 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-slate-950"
               >
                 View featured
               </a>
               <Link
                 to="/"
-                className="font-body text-sm text-slate-400 hover:text-white transition-colors"
+                className="min-touch font-body text-sm text-slate-400 hover:text-white transition-colors inline-flex items-center"
               >
                 ← Back to Home
               </Link>
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Category anchor nav */}
+        {/* Category anchor nav — static to avoid scroll lag from sticky */}
         <nav
-          className="sticky top-20 z-40 border-b border-white/10 bg-slate-950/95 backdrop-blur-md"
+          className="border-b border-white/10 bg-slate-950/98"
           aria-label="Gallery sections"
         >
           <div className={CONTAINER}>
-            <div className="flex gap-1 overflow-x-auto py-3 scroll-smooth justify-center">
+            <div className="flex gap-1 overflow-x-auto py-3 justify-center overscroll-x-contain">
               <a
                 href="#featured"
                 className="shrink-0 px-4 py-2 rounded-lg font-body text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-colors"
@@ -190,20 +186,17 @@ export default function GalleryPage() {
           className="py-16 border-b border-white/10 scroll-mt-32"
         >
           <div className={CONTAINER}>
-            <motion.div {...fadeUp} className="mb-10 text-center">
+            <div className="mb-10 text-center">
               <h2 className="font-display text-2xl md:text-3xl text-white">
                 Featured photos
               </h2>
               <p className="mt-1 text-slate-400 text-sm max-w-lg mx-auto">
                 A selection of spaces and views across the property.
               </p>
-            </motion.div>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {/* Large featured tile */}
-              <motion.div
-                {...staggerItem}
-                className="md:col-span-2 md:row-span-2"
-              >
+              <div className="md:col-span-2 md:row-span-2">
                 <button
                   type="button"
                   className="group relative w-full h-full min-h-[200px] md:min-h-[280px] rounded-xl overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400/60 focus:ring-offset-2 focus:ring-offset-slate-950 text-left"
@@ -212,90 +205,88 @@ export default function GalleryPage() {
                   <img
                     src={featuredImages[0]}
                     alt="Featured gallery 1"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="eager"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="absolute bottom-3 left-3 right-3 flex items-center justify-center gap-2 rounded-lg bg-black/40 py-2 text-sm font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <span className="absolute bottom-3 left-3 right-3 flex items-center justify-center gap-2 rounded-lg bg-black/40 py-2 text-sm font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                     <FiMaximize2 className="w-4 h-4" />
                     View full size
                   </span>
                 </button>
-              </motion.div>
+              </div>
               {/* Smaller tiles */}
-              {featuredImages.slice(1, 6).map((src, i) => {
-                return (
-                  <motion.div key={i} {...staggerItem}>
-                    <button
-                      type="button"
-                      className="group relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400/60 focus:ring-offset-2 focus:ring-offset-slate-950"
-                      onClick={() => openLightbox(featuredImages, i + 1)}
-                    >
-                      <img
-                        src={src}
-                        alt={`Featured gallery ${i + 2}`}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="rounded-full bg-white/20 p-2">
-                          <FiMaximize2 className="w-5 h-5 text-white" />
-                        </span>
-                      </div>
-                    </button>
-                  </motion.div>
-                );
-              })}
+              {featuredImages.slice(1, 6).map((src, i) => (
+                <div key={i}>
+                  <button
+                    type="button"
+                    className="group relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400/60 focus:ring-offset-2 focus:ring-offset-slate-950"
+                    onClick={() => openLightbox(featuredImages, i + 1)}
+                  >
+                    <img
+                      src={src}
+                      alt={`Featured gallery ${i + 2}`}
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                      <span className="rounded-full bg-white/20 p-2">
+                        <FiMaximize2 className="w-5 h-5 text-white" />
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Categories */}
-        {galleryCategories.map((cat) => {
-          return (
-            <section
-              key={cat.id}
-              id={cat.id}
-              className="py-16 border-b border-white/10 scroll-mt-32 bg-slate-900/20"
-            >
-              <div className={CONTAINER}>
-                <motion.div {...fadeUp} className="mb-8 text-center">
-                  <h2 className="font-display text-xl md:text-2xl text-white">
-                    {cat.title}
-                  </h2>
-                  <p className="mt-1 text-slate-400 text-sm max-w-lg mx-auto">{cat.description}</p>
-                </motion.div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
-                  {cat.images.map((src, i) => {
-                    return (
-                      <motion.div
-                        key={i}
-                        {...staggerItem}
-                        className="group"
-                      >
-                        <button
-                          type="button"
-                          className="relative w-full aspect-square rounded-xl overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400/60 focus:ring-offset-2 focus:ring-offset-slate-950"
-                          onClick={() => openLightbox(cat.images, i)}
-                        >
-                          <img
-                            src={src}
-                            alt={`${cat.title} ${i + 1}`}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
-                            <span className="flex items-center gap-2 rounded-lg bg-black/50 px-3 py-1.5 text-xs font-medium text-white">
-                              <FiMaximize2 className="w-3.5 h-3.5" />
-                              View
-                            </span>
-                          </div>
-                        </button>
-                      </motion.div>
-                    );
-                  })}
-                </div>
+        {/* Categories — grid lazy-mounts when section is near viewport */}
+        {galleryCategories.map((cat) => (
+          <section
+            key={cat.id}
+            id={cat.id}
+            className="py-16 border-b border-white/10 scroll-mt-32 bg-slate-900/20"
+          >
+            <div className={CONTAINER}>
+              <div className="mb-8 text-center">
+                <h2 className="font-display text-xl md:text-2xl text-white">
+                  {cat.title}
+                </h2>
+                <p className="mt-1 text-slate-400 text-sm max-w-lg mx-auto">{cat.description}</p>
               </div>
-            </section>
-          );
-        })}
+              <LazySection id={cat.id} placeholderMinHeight={600}>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+                  {cat.images.map((src, i) => (
+                    <div key={i} className="group">
+                      <button
+                        type="button"
+                        className="relative w-full aspect-square rounded-xl overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400/60 focus:ring-offset-2 focus:ring-offset-slate-950"
+                        onClick={() => openLightbox(cat.images, i)}
+                      >
+                        <img
+                          src={src}
+                          alt={`${cat.title} ${i + 1}`}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-end justify-center pb-3">
+                          <span className="flex items-center gap-2 rounded-lg bg-black/50 px-3 py-1.5 text-xs font-medium text-white">
+                            <FiMaximize2 className="w-3.5 h-3.5" />
+                            View
+                          </span>
+                        </div>
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </LazySection>
+            </div>
+          </section>
+        ))}
       </main>
       <Footer />
 
@@ -310,7 +301,7 @@ export default function GalleryPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.15 }}
             onClick={closeLightbox}
           >
             <div className="absolute top-4 right-4 flex items-center gap-3 z-10">
@@ -337,16 +328,12 @@ export default function GalleryPage() {
             >
               <FiChevronLeft className="w-6 h-6" />
             </button>
-            <motion.img
+            <img
               key={lightboxIndex}
               src={lightboxImages[lightboxIndex]}
               alt=""
               className="max-w-full max-h-[70vh] object-contain rounded-lg select-none cursor-default"
               onClick={(e) => e.stopPropagation()}
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
             />
             <button
               type="button"
@@ -375,7 +362,7 @@ export default function GalleryPage() {
                       setLightboxIndex(i);
                     }}
                   >
-                    <img src={src} alt="" className="w-full h-full object-cover" />
+                    <img src={src} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   </button>
                 );
               })}
