@@ -1,0 +1,26 @@
+{
+  "functions": {
+    "source": "functions"
+  },
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      { "source": "/api/ai", "function": "aiGenerate" },
+      { "source": "**", "destination": "/index.html" }
+    ]
+  },
+  "emulators": {
+    "functions": {
+      "env": {
+        "GOOGLE_AI_KEY": "AIzaSyA3DzxSEw-wU7w82F8VzvEsZKGApWNXymQ",
+        "GOOGLE_MODEL": "gemini-2.0-flash",
+        "GOOGLE_API_VERSION": "v1"
+      }
+    }
+  }
+}
