@@ -111,7 +111,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Email link sign-in
   const sendEmailLink = useCallback(async (email: string) => {
     const actionCodeSettings = {
-      url: window.location.origin + "/account/login", // redirect to login page after sign-in
+      url: window.location.origin + "/login", // redirect to login page after sign-in
       handleCodeInApp: true
     };
     await sendSignInLinkToEmail(auth, email, actionCodeSettings);

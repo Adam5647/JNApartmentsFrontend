@@ -34,13 +34,13 @@ export default function Nav() {
         {/* Logo */}
         <Link
           to="/"
-          className="flex shrink-0 items-center gap-2 py-2 -ml-1 rounded focus:outline-none focus:ring-2 focus:ring-brand-400/60 focus:ring-offset-2 focus:ring-offset-slate-950 transition opacity-90 hover:opacity-100"
+          className="flex shrink-0 items-center gap-2 py-2 -ml-1 rounded focus:outline-none transition opacity-90 hover:opacity-100"
         >
           {!logoError ? (
             <img
               src="/assets/images/logo.png"
               alt="JN Apartments"
-              className="h-11 w-auto object-contain sm:h-12"
+              className="h-14 w-auto object-contain sm:h-16"
               onError={() => setLogoError(true)}
             />
           ) : (
@@ -54,7 +54,7 @@ export default function Nav() {
             <Link
               key={to}
               to={to}
-              className="relative px-5 py-2.5 font-body text-base font-medium tracking-wide text-slate-400 hover:text-white transition-colors focus:outline-none focus:text-white focus:ring-2 focus:ring-brand-400/50 focus:ring-offset-2 focus:ring-offset-slate-950 rounded"
+              className="relative px-5 py-2.5 font-body text-base font-medium tracking-wide text-slate-400 hover:text-white transition-colors focus:outline-none focus:text-white rounded"
             >
               {label}
             </Link>
@@ -64,14 +64,14 @@ export default function Nav() {
         {/* Right: Login + Book Now - desktop */}
         <div className="hidden items-center gap-5 lg:flex">
           <Link
-            to="/admin/login"
-            className="font-body text-base font-medium text-slate-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-brand-400/50 focus:ring-offset-2 focus:ring-offset-slate-950 rounded py-2.5 px-2"
+            to="/login"
+            className="font-body text-base font-medium text-slate-400 hover:text-white transition-colors focus:outline-none rounded py-2.5 px-2"
           >
             Login
           </Link>
           <Link
             to="/bookings"
-            className="inline-flex items-center font-body text-base font-semibold text-white hover:text-brand-300 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-400/50 focus:ring-offset-2 focus:ring-offset-slate-950 rounded py-3 px-5 border border-white/20 hover:border-brand-400/50 bg-white/5 hover:bg-white/10"
+            className="inline-flex items-center font-body text-base font-semibold text-white hover:text-brand-300 transition-colors focus:outline-none rounded py-3 px-5 border border-white/20 hover:border-brand-400/50 bg-white/5 hover:bg-white/10"
           >
             Book Now
           </Link>
@@ -80,7 +80,7 @@ export default function Nav() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition lg:hidden focus:outline-none focus:ring-2 focus:ring-brand-400/50 focus:ring-offset-2 focus:ring-offset-slate-950"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition lg:hidden focus:outline-none"
           onClick={() => setMobileOpen((o) => !o)}
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
@@ -113,7 +113,7 @@ export default function Nav() {
             <Link
               key={to}
               to={to}
-              className="py-4 font-body text-base font-medium text-slate-300 hover:text-white transition-colors border-b border-white/[0.06] last:border-0"
+              className="py-4 font-body text-base font-medium text-slate-300 hover:text-white transition-colors border-b border-white/[0.06] last:border-0 focus:outline-none"
               onClick={() => setMobileOpen(false)}
             >
               {label}
@@ -121,15 +121,15 @@ export default function Nav() {
           ))}
           <div className="flex flex-col gap-2 pt-6 mt-2 border-t border-white/[0.08]">
             <Link
-              to="/admin/login"
-              className="py-4 text-center font-body text-base font-medium text-slate-300 hover:text-white transition-colors"
+              to="/login"
+              className="py-4 text-center font-body text-base font-medium text-slate-300 hover:text-white transition-colors focus:outline-none"
               onClick={() => setMobileOpen(false)}
             >
               Login
             </Link>
             <Link
               to="/bookings"
-              className="inline-flex items-center justify-center py-4 font-body text-base font-semibold text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors"
+              className="inline-flex items-center justify-center py-4 font-body text-base font-semibold text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors focus:outline-none"
               onClick={() => setMobileOpen(false)}
             >
               Book Now

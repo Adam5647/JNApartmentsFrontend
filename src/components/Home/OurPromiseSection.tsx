@@ -45,7 +45,7 @@ export default function OurPromiseSection() {
           <div className="absolute -bottom-20 right-0 h-96 w-96 rounded-full bg-brand-400/5 blur-3xl" aria-hidden />
 
           {/* Header - centered like git */}
-          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 relative">
+          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export default function OurPromiseSection() {
               className="font-display text-5xl md:text-6xl lg:text-7xl text-white mb-4 leading-tight"
             >
               Why Guests Love
-              <span className="block bg-gradient-to-r from-brand-400 via-brand-300 to-brand-200 bg-clip-text text-transparent">
+              <span className="block pb-2 bg-gradient-to-r from-brand-400 via-brand-300 to-brand-200 bg-clip-text text-transparent">
                 Staying with Us
               </span>
             </motion.h2>
