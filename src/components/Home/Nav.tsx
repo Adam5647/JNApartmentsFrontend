@@ -22,8 +22,10 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-slate-950/90 shadow-lg shadow-black/10" : "bg-transparent"
-      } backdrop-blur-md border-b border-white/[0.06]`}
+        scrolled
+          ? "bg-slate-950/90 shadow-lg shadow-black/10 backdrop-blur-md"
+          : "bg-transparent"
+      }`}
     >
       <nav
         className="mx-auto flex w-full max-w-[100rem] items-center justify-between gap-6 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 h-20"

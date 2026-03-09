@@ -238,7 +238,7 @@ export default function ExperiencesSection() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
                 onClick={() => setSelectedExperience(experiences[3])}
-                className="group md:col-span-12 lg:col-span-7 relative overflow-hidden rounded-2xl sm:rounded-3xl cursor-pointer touch-manipulation"
+                className="group md:col-span-12 relative overflow-hidden rounded-2xl sm:rounded-3xl cursor-pointer touch-manipulation"
               >
                 <div className="relative h-full min-h-[220px] sm:min-h-[260px]">
                   <div className="absolute inset-0">
@@ -340,7 +340,7 @@ export default function ExperiencesSection() {
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-slate-900 rounded-3xl border border-slate-700/50 shadow-2xl"
+              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden bg-slate-900 rounded-3xl border border-slate-700/50 shadow-2xl"
             >
               <button
                 onClick={() => setSelectedExperience(null)}

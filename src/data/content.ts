@@ -353,9 +353,8 @@ export const communityHighlights = [
   },
 ];
 
-/** Community section hero image (external). */
-export const communityImage =
-  "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80";
+/** Community section hero image (local asset). */
+export const communityImage = asset("WEBSITE PHOTO/JNA-21.jpg");
 
 /** Future-forward / promise bullets (for reuse). */
 export const futureForward = [
@@ -454,7 +453,7 @@ export const testimonialsPageList = [
     quote:
       "Clean rooms, helpful staff, and reliable Wi‑Fi. Perfect base for our Shillong work trip.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+    image: asset("1.JPG"),
   },
   {
     id: 2,
@@ -463,7 +462,7 @@ export const testimonialsPageList = [
     quote:
       "Loved how we could take a full 2BHK for family while friends used a 1BHK next door.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80",
+    image: asset("2.JPG"),
   },
   {
     id: 3,
@@ -472,7 +471,7 @@ export const testimonialsPageList = [
     quote:
       "Parking and quick access to the lobby made late-night arrivals stress-free.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80",
+    image: asset("3.JPG"),
   },
 ];
 
@@ -503,7 +502,7 @@ export const testimonialsDetailedReviews = [
     quote:
       "Absolutely stunning property with breathtaking views of the Khasi Hills. The staff went above and beyond to make our stay memorable. The attention to detail in the architecture and the warmth of the hospitality made this one of the best travel experiences we've ever had.",
     tags: ["Exceptional Service", "Stunning Views", "Cultural Experience"],
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
+    image: asset("1.JPG"),
   },
   {
     id: 2,
@@ -515,7 +514,7 @@ export const testimonialsDetailedReviews = [
     quote:
       "Living at JN Apartments has been a game-changer for my work-life balance. The peaceful environment, modern amenities, and proximity to nature help me stay productive while feeling completely relaxed. The maintenance team is incredibly responsive.",
     tags: ["Peaceful Environment", "Modern Amenities", "Responsive Maintenance"],
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+    image: asset("2.JPG"),
   },
   {
     id: 3,
@@ -527,7 +526,7 @@ export const testimonialsDetailedReviews = [
     quote:
       "The botanical loft was a revelation! Waking up to the sounds of nature while being surrounded by such thoughtful design elements made our trip truly special. The hydroponic wall and aroma library were unexpected delights that enhanced our stay beautifully.",
     tags: ["Unique Design", "Nature Integration", "Thoughtful Amenities"],
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80",
+    image: asset("3.JPG"),
   },
   {
     id: 4,
@@ -539,7 +538,7 @@ export const testimonialsDetailedReviews = [
     quote:
       "Perfect for business travelers. The high-speed internet, workspace, and business lounge made it easy to stay productive. The location is ideal for meetings in Shillong, and the food recommendations from the concierge were spot-on.",
     tags: ["Business Facilities", "Prime Location", "Local Expertise"],
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80",
+    image: asset("5.JPG"),
   },
   {
     id: 5,
@@ -551,7 +550,7 @@ export const testimonialsDetailedReviews = [
     quote:
       "Our family vacation was made perfect by the spacious family suite and the children's amenities. The staff treated our kids like royalty, and the location provided easy access to all the family-friendly attractions in Meghalaya.",
     tags: ["Family-Friendly", "Spacious Accommodations", "Child-Centric Service"],
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80",
+    image: asset("General Pictures (Reception, Lobby, Common Room)/Lobby.jpg"),
   },
   {
     id: 6,
@@ -563,7 +562,7 @@ export const testimonialsDetailedReviews = [
     quote:
       "The long-term rental program exceeded all expectations. From the seamless move-in process to the ongoing support, everything was handled professionally. The community's focus on sustainability and local culture integration is truly commendable.",
     tags: ["Seamless Process", "Ongoing Support", "Cultural Integration"],
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+    image: asset("General Pictures (Reception, Lobby, Common Room)/Reception_.jpg"),
   },
 ];
 
@@ -595,9 +594,8 @@ export const testimonialsGuestStories = [
   },
 ];
 
-/** Hero background image for Testimonials page (external) */
-export const testimonialsHeroImage =
-  "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80";
+/** Hero background image for Testimonials page (local asset) */
+export const testimonialsHeroImage = asset("WEBSITE PHOTO/JNA-21.jpg");
 
 /** Hero background image for Bookings page (local asset) */
 export const bookingsHeroImage = asset(
