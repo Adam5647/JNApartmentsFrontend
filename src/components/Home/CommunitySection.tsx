@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiUsers, FiMapPin, FiDollarSign, FiCalendar } from "react-icons/fi";
+import { FiCalendar } from "react-icons/fi";
 import { communityHighlights, communityImage } from "../../data/content";
 
 export default function CommunitySection() {

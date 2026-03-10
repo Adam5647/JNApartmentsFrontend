@@ -6,6 +6,9 @@
 const asset = (path: string) =>
   `/assets/images/JN%20Apartments/${encodeURI(path)}`;
 
+const ROOM_1BHK = "Room/1BHK@ Rs.3000-night";
+const ROOM_2BHK = "Room/2BHK@ Rs. 4500-night";
+
 export const navigationLinks = [
   { label: "Suites", href: "/suites" },
   { label: "Gallery", href: "/gallery" },
@@ -26,9 +29,7 @@ export const residences = [
       "Cozy one-bedroom with living area, kitchenette, and balcony access in the Deluxe Non-AC wing on the lower floor.",
     size: "Approx. 650 sq ft",
     sleeps: "Up to 3 guests",
-    image: asset(
-      "Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Living room.jpg"
-    ),
+    image: asset(`${ROOM_1BHK}/Living room.jpg`),
     perks: ["₹3,000 per night", "Private living area", "Kitchenette", "Housekeeping"],
     rentalTypes: ["nightly"],
   },
@@ -38,9 +39,7 @@ export const residences = [
       "Full two-bedroom flat with living room and kitchen. Perfect for families or small groups on the lower floor wing.",
     size: "Approx. 950 sq ft",
     sleeps: "Up to 6 guests",
-    image: asset(
-      "Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Livingroom.jpg"
-    ),
+    image: asset(`${ROOM_2BHK}/Livingroom.jpg`),
     perks: ["₹4,500 per night", "Two bedrooms", "Full kitchen", "Geyser & Wi‑Fi"],
     rentalTypes: ["nightly"],
   },
@@ -50,9 +49,7 @@ export const residences = [
       "Upper-floor one-bedroom with bright living space and kitchenette. Scenic second-floor corridor suites.",
     size: "Approx. 650 sq ft",
     sleeps: "Up to 3 guests",
-    image: asset(
-      "Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/1BHK@ Rs.3000-night/Living room.jpg"
-    ),
+    image: asset(`${ROOM_1BHK}/JNA-15.jpg`),
     perks: ["₹3,000 per night", "Upper-floor views", "Kitchenette", "Daily service"],
     rentalTypes: ["nightly"],
   },
@@ -62,9 +59,7 @@ export const residences = [
       "Second-floor two-bedroom with larger living room and privacy doors—great for groups seeking a full flat with views.",
     size: "Approx. 950 sq ft",
     sleeps: "Up to 6 guests",
-    image: asset(
-      "Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Livingroom.jpg"
-    ),
+    image: asset(`${ROOM_2BHK}/JNA-45.jpg`),
     perks: ["₹4,500 per night", "Two bedrooms", "Family lounge", "Kitchen"],
     rentalTypes: ["nightly"],
   },
@@ -79,10 +74,17 @@ export const suites = [
     nightlyRate: 3000,
     totalUnits: 4,
     images: [
-      asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Bedroom.jpg"),
-      asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Living room.jpg"),
-      asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Kitchen.jpg"),
-      asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Bathroom_.jpg"),
+      asset(`${ROOM_1BHK}/Bedroom.jpg`),
+      asset(`${ROOM_1BHK}/Living room.jpg`),
+      asset(`${ROOM_1BHK}/Kitchen.jpg`),
+      asset(`${ROOM_1BHK}/Bathroom_.jpg`),
+      asset(`${ROOM_1BHK}/JNA-10.jpg`),
+      asset(`${ROOM_1BHK}/JNA-15.jpg`),
+      asset(`${ROOM_1BHK}/JNA-18.jpg`),
+      asset(`${ROOM_1BHK}/JNA-25.jpg`),
+      asset(`${ROOM_1BHK}/JNA-43.jpg`),
+      asset(`${ROOM_1BHK}/JNA-56.jpg`),
+      asset(`${ROOM_1BHK}/JNA-57.jpg`),
     ],
     amenities: ["Living area", "Kitchenette", "Geyser", "Wi‑Fi"],
     maxGuests: 3,
@@ -95,11 +97,20 @@ export const suites = [
     nightlyRate: 4500,
     totalUnits: 4,
     images: [
-      asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Bedroom.jpg"),
-      asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Bedroom_.jpg"),
-      asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Livingroom.jpg"),
-      asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Kitchen.jpg"),
-      asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Bathroom_.jpg"),
+      asset(`${ROOM_2BHK}/Bedroom.jpg`),
+      asset(`${ROOM_2BHK}/Bedroom_.jpg`),
+      asset(`${ROOM_2BHK}/Livingroom.jpg`),
+      asset(`${ROOM_2BHK}/Kitchen.jpg`),
+      asset(`${ROOM_2BHK}/Bathroom_.jpg`),
+      asset(`${ROOM_2BHK}/JNA-1.jpg`),
+      asset(`${ROOM_2BHK}/JNA-4.jpg`),
+      asset(`${ROOM_2BHK}/JNA-13.jpg`),
+      asset(`${ROOM_2BHK}/JNA-27.jpg`),
+      asset(`${ROOM_2BHK}/JNA-28.jpg`),
+      asset(`${ROOM_2BHK}/JNA-32.jpg`),
+      asset(`${ROOM_2BHK}/JNA-35.jpg`),
+      asset(`${ROOM_2BHK}/JNA-45.jpg`),
+      asset(`${ROOM_2BHK}/14.JPG`),
     ],
     amenities: ["Two bedrooms", "Full kitchen", "Dining nook", "Wi‑Fi"],
     maxGuests: 6,
@@ -112,10 +123,17 @@ export const suites = [
     nightlyRate: 3000,
     totalUnits: 4,
     images: [
-      asset("Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/1BHK@ Rs.3000-night/Bedroom.jpg"),
-      asset("Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/1BHK@ Rs.3000-night/Living room.jpg"),
-      asset("Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/1BHK@ Rs.3000-night/Kitchen.jpg"),
-      asset("Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/1BHK@ Rs.3000-night/Bathroom_.jpg"),
+      asset(`${ROOM_1BHK}/Bedroom.jpg`),
+      asset(`${ROOM_1BHK}/Living room.jpg`),
+      asset(`${ROOM_1BHK}/Kitchen.jpg`),
+      asset(`${ROOM_1BHK}/Bathroom_.jpg`),
+      asset(`${ROOM_1BHK}/JNA-10.jpg`),
+      asset(`${ROOM_1BHK}/JNA-15.jpg`),
+      asset(`${ROOM_1BHK}/JNA-18.jpg`),
+      asset(`${ROOM_1BHK}/JNA-25.jpg`),
+      asset(`${ROOM_1BHK}/JNA-43.jpg`),
+      asset(`${ROOM_1BHK}/JNA-56.jpg`),
+      asset(`${ROOM_1BHK}/JNA-57.jpg`),
     ],
     amenities: ["Living area", "Kitchenette", "Hot water", "Wi‑Fi"],
     maxGuests: 3,
@@ -128,11 +146,20 @@ export const suites = [
     nightlyRate: 4500,
     totalUnits: 4,
     images: [
-      asset("Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Bedroom.jpg"),
-      asset("Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Bedroom_.jpg"),
-      asset("Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Livingroom.jpg"),
-      asset("Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Kitchen.jpg"),
-      asset("Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Bathroom.jpg"),
+      asset(`${ROOM_2BHK}/Bedroom.jpg`),
+      asset(`${ROOM_2BHK}/Bedroom_.jpg`),
+      asset(`${ROOM_2BHK}/Livingroom.jpg`),
+      asset(`${ROOM_2BHK}/Kitchen.jpg`),
+      asset(`${ROOM_2BHK}/Bathroom_.jpg`),
+      asset(`${ROOM_2BHK}/JNA-1.jpg`),
+      asset(`${ROOM_2BHK}/JNA-4.jpg`),
+      asset(`${ROOM_2BHK}/JNA-13.jpg`),
+      asset(`${ROOM_2BHK}/JNA-27.jpg`),
+      asset(`${ROOM_2BHK}/JNA-28.jpg`),
+      asset(`${ROOM_2BHK}/JNA-32.jpg`),
+      asset(`${ROOM_2BHK}/JNA-35.jpg`),
+      asset(`${ROOM_2BHK}/JNA-45.jpg`),
+      asset(`${ROOM_2BHK}/14.JPG`),
     ],
     amenities: ["Two bedrooms", "Family lounge", "Kitchen", "Wi‑Fi"],
     maxGuests: 6,
@@ -160,30 +187,40 @@ export const generalGallery = [
 
 export const galleryImages = [
   ...generalGallery,
-  asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Living room.jpg"),
-  asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Livingroom.jpg"),
-  asset("Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/1BHK@ Rs.3000-night/Bedroom.jpg"),
-  asset("Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Bedroom.jpg"),
+  asset(`${ROOM_1BHK}/Living room.jpg`),
+  asset(`${ROOM_1BHK}/Bedroom.jpg`),
+  asset(`${ROOM_1BHK}/Kitchen.jpg`),
+  asset(`${ROOM_1BHK}/Bathroom_.jpg`),
+  asset(`${ROOM_1BHK}/JNA-10.jpg`),
+  asset(`${ROOM_1BHK}/JNA-15.jpg`),
+  asset(`${ROOM_2BHK}/Livingroom.jpg`),
+  asset(`${ROOM_2BHK}/Bedroom.jpg`),
+  asset(`${ROOM_2BHK}/Bedroom_.jpg`),
+  asset(`${ROOM_2BHK}/Kitchen.jpg`),
+  asset(`${ROOM_2BHK}/Bathroom_.jpg`),
+  asset(`${ROOM_2BHK}/JNA-1.jpg`),
+  asset(`${ROOM_2BHK}/JNA-4.jpg`),
+  asset(`${ROOM_2BHK}/14.JPG`),
 ];
 
 /** Building & exterior gallery – WEBSITE PHOTO only (no overlap with other sections). */
 export const exteriorGallery = [
-  asset("WEBSITE PHOTO/JNA-21.jpg"),
-  asset("WEBSITE PHOTO/JNA-24.jpg"),
-  asset("WEBSITE PHOTO/JNA-27.jpg"),
-  asset("WEBSITE PHOTO/JNA-28.jpg"),
-  asset("WEBSITE PHOTO/JNA-30.jpg"),
-  asset("WEBSITE PHOTO/JNA-31.jpg"),
+  asset(`${ROOM_2BHK}/JNA-27.jpg`),
+  asset(`${ROOM_2BHK}/JNA-28.jpg`),
+  asset(`${ROOM_2BHK}/JNA-32.jpg`),
+  asset(`${ROOM_2BHK}/JNA-35.jpg`),
+  asset(`${ROOM_2BHK}/JNA-45.jpg`),
+  asset(`${ROOM_1BHK}/JNA-43.jpg`),
 ];
 
 /** Featured gallery – 6 unique WEBSITE PHOTO images (no overlap with other sections). */
 export const featuredGallery = [
-  asset("WEBSITE PHOTO/JNA-1.jpg"),
-  asset("WEBSITE PHOTO/JNA-4.jpg"),
-  asset("WEBSITE PHOTO/JNA-10.jpg"),
-  asset("WEBSITE PHOTO/JNA-12.jpg"),
-  asset("WEBSITE PHOTO/JNA-15.jpg"),
-  asset("WEBSITE PHOTO/JNA-18.jpg"),
+  asset(`${ROOM_2BHK}/JNA-1.jpg`),
+  asset(`${ROOM_2BHK}/JNA-4.jpg`),
+  asset(`${ROOM_1BHK}/JNA-10.jpg`),
+  asset(`${ROOM_2BHK}/JNA-13.jpg`),
+  asset(`${ROOM_1BHK}/JNA-15.jpg`),
+  asset(`${ROOM_1BHK}/JNA-18.jpg`),
 ];
 
 /** Experiences (home section): bento cards + modal. Images via asset(). */
@@ -201,7 +238,7 @@ export const experiences = [
     title: "Cozy living rooms",
     description:
       "Each suite offers a dedicated living area to unwind, stream, or host friends.",
-    image: asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Living room.jpg"),
+    image: asset(`${ROOM_1BHK}/Living room.jpg`),
     fullDescription:
       "Every suite features a thoughtfully designed living space perfect for relaxation and entertainment. Sink into comfortable seating, enjoy your favorite shows on Smart TV, or gather with friends in a home-like atmosphere. The spacious layout provides the perfect balance between privacy and social interaction.",
     features: ["Smart TV Ready", "Comfortable Seating", "Reading Corner", "Work Desk Available"],
@@ -210,7 +247,7 @@ export const experiences = [
     title: "Home-style kitchens",
     description:
       "Cook simple meals with stocked kitchens, cookware, and storage for longer stays.",
-    image: asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Kitchen.jpg"),
+    image: asset(`${ROOM_2BHK}/Kitchen.jpg`),
     fullDescription:
       "Prepare your favorite meals in fully-equipped kitchens designed for both quick snacks and elaborate cooking. Each kitchen comes with modern appliances, quality cookware, ample storage, and a dining area. Perfect for families and extended stays who want the comfort of home-cooked meals.",
     features: ["Full Cookware Set", "Gas Stove & Burner", "Refrigerator", "Dining Table", "Storage Cabinets"],
@@ -233,14 +270,14 @@ export const servicesPageExperiences = [
     description:
       "Our eight convertible 1BHK and 2BHK Deluxe Non-AC suites are spread across two floors, each thoughtfully designed for comfort and functionality. Whether you are travelling solo, as a couple, or with family and friends, you will find a layout that suits your needs. Every suite features modern furnishings, generous living areas, and private spaces that feel like home. Kitchen facilities in each unit allow you to prepare meals at your pace, while the spacious layouts and clean lines make longer stays comfortable and stress-free.",
     features: ["Modern furnishings", "Spacious layouts", "Private living areas", "Kitchen facilities"],
-    image: asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Living room.jpg"),
+    image: asset(`${ROOM_1BHK}/Living room.jpg`),
   },
   {
     title: "In-House Dining",
     description:
       "Our on-site restaurant offers the convenience of breakfast, lunch, and dinner without leaving the property. The menu brings together local Meghalayan flavors and familiar comfort food, so you can start the day with a hearty meal, grab a quick bite between outings, or wind down with a full dinner. We cater to a range of preferences and dietary needs, and room service is available for those who prefer to dine in the comfort of their suite. Whether you are here for work or leisure, in-house dining makes every day easier.",
     features: ["Daily breakfast", "Local cuisine", "Room service", "Special diets"],
-    image: asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Kitchen.jpg"),
+    image: asset(`${ROOM_2BHK}/Kitchen.jpg`),
   },
   {
     title: "Secure Parking",
@@ -261,7 +298,7 @@ export const servicesPageExperiences = [
     description:
       "Professional housekeeping keeps your suite in top condition throughout your stay. We use fresh linens, thorough cleaning routines, and eco-friendly products where possible, so your space stays clean and comfortable without a heavy environmental footprint. Service is available on a daily basis and can be tailored to your schedule; if you prefer a light touch or a specific time, our team will work around your plans. Just let the front desk know your preferences.",
     features: ["Daily cleaning", "Fresh linens", "Eco products", "On-request service"],
-    image: asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Bedroom.jpg"),
+    image: asset(`${ROOM_1BHK}/Bedroom.jpg`),
   },
   {
     title: "High-Speed Connectivity",
@@ -354,7 +391,7 @@ export const communityHighlights = [
 ];
 
 /** Community section hero image (local asset). */
-export const communityImage = asset("WEBSITE PHOTO/JNA-21.jpg");
+export const communityImage = exteriorGallery[0];
 
 /** Future-forward / promise bullets (for reuse). */
 export const futureForward = [
@@ -582,7 +619,7 @@ export const testimonialsGuestStories = [
     author: "Alex Chen",
     excerpt:
       "Three months in the Botanical Loft transformed how I work. The blend of nature, technology, and community created an environment where creativity flourished and work became more than just a task.",
-    image: asset("Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Living room.jpg"),
+    image: asset(`${ROOM_1BHK}/Living room.jpg`),
   },
   {
     id: 3,
@@ -595,7 +632,7 @@ export const testimonialsGuestStories = [
 ];
 
 /** Hero background image for Testimonials page (distinct from Suites hero) */
-export const testimonialsHeroImage = asset("WEBSITE PHOTO/JNA-27.jpg");
+export const testimonialsHeroImage = exteriorGallery[1] ?? exteriorGallery[0];
 
 /** Hero background image for Bookings page (local asset) */
 export const bookingsHeroImage = asset(
@@ -603,4 +640,4 @@ export const bookingsHeroImage = asset(
 );
 
 /** Hero background image for Suites page (local asset) */
-export const suitesHeroImage = asset("WEBSITE PHOTO/JNA-21.jpg");
+export const suitesHeroImage = exteriorGallery[0];

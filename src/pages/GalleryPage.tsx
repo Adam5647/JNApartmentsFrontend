@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
 import { FiMaximize2, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Nav from "../components/Home/Nav";
 import Footer from "../components/Home/Footer";
@@ -57,12 +56,12 @@ export default function GalleryPage() {
     setLightboxImages([]);
   }, []);
 
-  const moveLightbox = (delta: number) => {
+  const moveLightbox = useCallback((delta: number) => {
     if (lightboxIndex === null) return;
     setLightboxIndex(
       (prev) => ((prev! + delta + lightboxImages.length) % lightboxImages.length)
     );
-  };
+  }, [lightboxIndex, lightboxImages.length]);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -73,7 +72,7 @@ export default function GalleryPage() {
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [lightboxIndex, lightboxImages.length, closeLightbox]);
+  }, [lightboxIndex, moveLightbox, closeLightbox]);
 
   const featuredImages = featuredGallery;
 
@@ -175,8 +174,7 @@ export default function GalleryPage() {
                     alt="Featured gallery 1"
                     loading="eager"
                     decoding="async"
-                    // @ts-ignore – fetchpriority not yet in React types
-                    fetchpriority="high"
+                    fetchPriority="high"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -260,19 +258,14 @@ export default function GalleryPage() {
       <Footer />
 
       {/* Lightbox */}
-      <AnimatePresence>
-        {lightboxIndex !== null && lightboxImages.length > 0 && (
-          <motion.div
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/95 p-4"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Image gallery"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
-            onClick={closeLightbox}
-          >
+      {lightboxIndex !== null && lightboxImages.length > 0 && (
+        <div
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/95 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image gallery"
+          onClick={closeLightbox}
+        >
             <div className="absolute top-4 right-4 flex items-center gap-3 z-10">
               <span className="text-slate-400 text-sm font-body">
                 {lightboxIndex + 1} / {lightboxImages.length}
@@ -336,9 +329,8 @@ export default function GalleryPage() {
                 );
               })}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        </div>
+      )}
     </div>
   );
 }

@@ -17,6 +17,17 @@ module.exports = {
       version: "detect"
     }
   },
+  overrides: [
+    {
+      files: ["functions/**/*.js"],
+      parserOptions: {
+        sourceType: "script"
+      },
+      rules: {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ],
   rules: {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off"

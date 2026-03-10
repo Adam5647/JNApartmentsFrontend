@@ -81,12 +81,12 @@ export default function SuitesPage() {
     setLightboxImages([]);
   }, []);
 
-  const moveLightbox = (delta: number) => {
+  const moveLightbox = useCallback((delta: number) => {
     if (lightboxIndex === null) return;
     setLightboxIndex(
       (prev) => ((prev! + delta + lightboxImages.length) % lightboxImages.length)
     );
-  };
+  }, [lightboxIndex, lightboxImages.length]);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -97,7 +97,7 @@ export default function SuitesPage() {
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [lightboxIndex, lightboxImages.length, closeLightbox]);
+  }, [lightboxIndex, moveLightbox, closeLightbox]);
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">

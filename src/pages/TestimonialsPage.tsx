@@ -272,7 +272,7 @@ export default function TestimonialsPage() {
                   Share Your Experience
                 </h2>
                 <p className="text-slate-300 text-lg max-w-xl mx-auto mb-8">
-                  Have you stayed with us? We'd love to hear about your experience and feature your
+                  Have you stayed with us? We&apos;d love to hear about your experience and feature your
                   story.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

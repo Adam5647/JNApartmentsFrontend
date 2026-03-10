@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiX, FiHeadphones, FiMap, FiAward } from "react-icons/fi";
+import { FiX as _FiX, FiHeadphones as _FiHeadphones, FiMap as _FiMap, FiAward as _FiAward } from "react-icons/fi";
 import { experiences } from "../../data/content";
+
+// react-icons v5 doesn't expose className through JSX prop types — cast to fix
+type IconProps = { className?: string; strokeWidth?: number };
+const FiX = _FiX as unknown as (props: IconProps) => JSX.Element;
+const FiHeadphones = _FiHeadphones as unknown as (props: IconProps) => JSX.Element;
+const FiMap = _FiMap as unknown as (props: IconProps) => JSX.Element;
+const FiAward = _FiAward as unknown as (props: IconProps) => JSX.Element;
 
 type Experience = (typeof experiences)[number];
 

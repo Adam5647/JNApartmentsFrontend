@@ -25,12 +25,12 @@ export default function BookingsPage() {
               Book Your <span className="text-brand-200">Stay</span>
             </h1>
             <p className="mt-4 text-slate-300 text-lg max-w-2xl mx-auto">
-              Experience luxury living in Meghalaya's finest serviced apartments. Reserve your dates through our secure booking partner, Meghalaya Tourism.
+              Experience luxury living in Meghalaya&apos;s finest serviced apartments. Reserve your dates through our secure booking partner, Meghalaya Tourism.
             </p>
             <p className="mt-2 text-slate-400 text-sm font-medium uppercase tracking-wider">
               Book Hotel on Meghalaya Tourism
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex justify-center">
               <MtbButton slug="693abf6c2f91fcdb61d3f676" />
             </div>
             <Link

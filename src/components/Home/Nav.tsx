@@ -75,14 +75,8 @@ export default function Nav() {
           })}
         </div>
 
-        {/* Right: Login + Book Now - desktop */}
+        {/* Right: Book Now - desktop */}
         <div className="hidden items-center gap-5 lg:flex">
-          <Link
-            to="/login"
-            className="font-body text-base font-medium text-slate-400 hover:text-white transition-colors focus:outline-none rounded py-2.5 px-2"
-          >
-            Login
-          </Link>
           <Link
             to="/bookings"
             className="inline-flex items-center font-body text-base font-semibold text-white hover:text-brand-300 transition-colors focus:outline-none rounded py-3 px-5 border border-white/20 hover:border-brand-400/50 bg-white/5 hover:bg-white/10"
@@ -140,13 +134,6 @@ export default function Nav() {
             );
           })}
           <div className="flex flex-col gap-2 pt-4 xs:pt-6 mt-2 border-t border-white/[0.08]">
-            <Link
-              to="/login"
-              className="min-touch flex items-center justify-center py-4 font-body text-base font-medium text-slate-300 hover:text-white transition-colors focus:outline-none touch-manipulation"
-              onClick={() => setMobileOpen(false)}
-            >
-              Login
-            </Link>
             <Link
               to="/bookings"
               className="min-touch inline-flex items-center justify-center py-4 font-body text-base font-semibold text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors focus:outline-none touch-manipulation"

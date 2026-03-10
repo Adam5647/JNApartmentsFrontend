@@ -20,14 +20,4 @@ interface ImportMeta {
 	readonly env: ImportMetaEnv;
 }
 
-// Custom element for Magical Meghalaya Tourism button (mtb-button.js from index.html)
-declare module "react" {
-	namespace JSX {
-		interface IntrinsicElements {
-			"mtb-button": import("react").DetailedHTMLProps<
-				import("react").HTMLAttributes<HTMLElement> & { slug: string },
-				HTMLElement
-			>;
-		}
-	}
-}
+// Custom element for Magical Meghalaya Tourism button — see src/react-augment.d.ts
