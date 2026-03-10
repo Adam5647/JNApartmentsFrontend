@@ -25,11 +25,7 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        showSolidNav
-          ? "bg-slate-950/95 shadow-lg shadow-black/10"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-950/95 shadow-lg shadow-black/10 ${!showSolidNav ? "lg:bg-transparent lg:shadow-none" : ""}`}
     >
       <nav
         className="mx-auto flex w-full max-w-[100rem] items-center justify-between gap-4 xs:gap-6 px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 h-16 xs:h-20"
