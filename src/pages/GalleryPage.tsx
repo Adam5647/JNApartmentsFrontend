@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMaximize2, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -42,38 +42,6 @@ const galleryCategories = [
   },
 ];
 
-/** Only render children when the section is near the viewport (reduces DOM and paint during scroll). */
-function LazySection({
-  id,
-  children,
-  placeholderMinHeight = 800,
-}: {
-  id: string;
-  children: React.ReactNode;
-  placeholderMinHeight?: number;
-}) {
-  const [inView, setInView] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setInView(true);
-      },
-      { rootMargin: "400px", threshold: 0 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div ref={ref} style={{ minHeight: inView ? undefined : placeholderMinHeight }}>
-      {inView ? children : null}
-    </div>
-  );
-}
 
 export default function GalleryPage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -207,6 +175,8 @@ export default function GalleryPage() {
                     alt="Featured gallery 1"
                     loading="eager"
                     decoding="async"
+                    // @ts-ignore – fetchpriority not yet in React types
+                    fetchpriority="high"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -249,6 +219,7 @@ export default function GalleryPage() {
             key={cat.id}
             id={cat.id}
             className="py-16 border-b border-white/10 scroll-mt-32 bg-slate-900/20"
+            style={{ contentVisibility: "auto", containIntrinsicSize: "0 900px" }}
           >
             <div className={CONTAINER}>
               <div className="mb-8 text-center">
@@ -257,33 +228,31 @@ export default function GalleryPage() {
                 </h2>
                 <p className="mt-1 text-slate-400 text-sm max-w-lg mx-auto">{cat.description}</p>
               </div>
-              <LazySection id={cat.id} placeholderMinHeight={600}>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
-                  {cat.images.map((src, i) => (
-                    <div key={i} className="group">
-                      <button
-                        type="button"
-                        className="relative w-full aspect-square rounded-xl overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400/60 focus:ring-offset-2 focus:ring-offset-slate-950"
-                        onClick={() => openLightbox(cat.images, i)}
-                      >
-                        <img
-                          src={src}
-                          alt={`${cat.title} ${i + 1}`}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-end justify-center pb-3">
-                          <span className="flex items-center gap-2 rounded-lg bg-black/50 px-3 py-1.5 text-xs font-medium text-white">
-                            <FiMaximize2 className="w-3.5 h-3.5" />
-                            View
-                          </span>
-                        </div>
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              </LazySection>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+                {cat.images.map((src, i) => (
+                  <div key={i} className="group">
+                    <button
+                      type="button"
+                      className="relative w-full aspect-square rounded-xl overflow-hidden border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400/60 focus:ring-offset-2 focus:ring-offset-slate-950"
+                      onClick={() => openLightbox(cat.images, i)}
+                    >
+                      <img
+                        src={src}
+                        alt={`${cat.title} ${i + 1}`}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-end justify-center pb-3">
+                        <span className="flex items-center gap-2 rounded-lg bg-black/50 px-3 py-1.5 text-xs font-medium text-white">
+                          <FiMaximize2 className="w-3.5 h-3.5" />
+                          View
+                        </span>
+                      </div>
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         ))}

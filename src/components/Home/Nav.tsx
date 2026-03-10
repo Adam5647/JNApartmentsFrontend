@@ -27,7 +27,7 @@ export default function Nav() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         showSolidNav
-          ? "bg-slate-950/95 shadow-lg shadow-black/10 md:backdrop-blur-md"
+          ? "bg-slate-950/95 shadow-lg shadow-black/10"
           : "bg-transparent"
       }`}
     >
