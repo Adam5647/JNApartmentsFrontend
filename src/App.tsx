@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import HomePage from "./pages/HomePage";
 import GalleryPage from "./pages/GalleryPage";
 import SuitesPage from "./pages/SuitesPage";
@@ -19,7 +20,9 @@ import AdminProtectedRoute from "./components/Admin/AdminProtectedRoute";
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/gallery" element={<GalleryPage />} />
       <Route path="/suites" element={<SuitesPage />} />
@@ -45,6 +48,7 @@ export default function App() {
         <Route path="reviews" element={<AdminReviews />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+      </Routes>
+    </>
   );
 }
