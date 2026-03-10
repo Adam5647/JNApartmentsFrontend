@@ -1,0 +1,130 @@
+[debug] [2026-03-10T10:52:42.233Z] ----------------------------------------------------------------------
+[debug] [2026-03-10T10:52:42.237Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --project jnapartments-baa7a
+[debug] [2026-03-10T10:52:42.237Z] CLI Version:   15.9.1
+[debug] [2026-03-10T10:52:42.238Z] Platform:      win32
+[debug] [2026-03-10T10:52:42.238Z] Node Version:  v25.4.0
+[debug] [2026-03-10T10:52:42.238Z] Time:          Tue Mar 10 2026 16:22:42 GMT+0530 (India Standard Time)
+[debug] [2026-03-10T10:52:42.238Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-10T10:52:46.194Z] Object "/emulators/functions" in "firebase.json" has unknown property: {"additionalProperty":"env"}
+[debug] [2026-03-10T10:52:46.201Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-10T10:52:46.202Z] > authorizing via signed-in user (classicmalsawma@gmail.com)
+[debug] [2026-03-10T10:52:46.203Z] [iam] checking project jnapartments-baa7a for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-03-10T10:52:46.206Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:46.207Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:46.209Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/jnapartments-baa7a:testIamPermissions [none]
+[debug] [2026-03-10T10:52:46.209Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/jnapartments-baa7a:testIamPermissions  x-goog-user-project=jnapartments-baa7a
+[debug] [2026-03-10T10:52:46.209Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jnapartments-baa7a:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-03-10T10:52:47.892Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/jnapartments-baa7a:testIamPermissions 200
+[debug] [2026-03-10T10:52:47.893Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jnapartments-baa7a:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-03-10T10:52:47.894Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:47.894Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:47.896Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jnapartments-baa7a [none]
+[debug] [2026-03-10T10:52:48.510Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jnapartments-baa7a 200
+[debug] [2026-03-10T10:52:48.511Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jnapartments-baa7a {"projectId":"jnapartments-baa7a","projectNumber":"399181650170","displayName":"jnapartments","name":"projects/jnapartments-baa7a","resources":{"hostingSite":"jnapartments-baa7a"},"state":"ACTIVE","etag":"1_8bdb9921-2e61-4a39-8a08-8c76e743ef03"}
+[info] 
+[info] === Deploying to 'jnapartments-baa7a'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-03-10T10:52:48.516Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:48.516Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:48.517Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/versions [none]
+[debug] [2026-03-10T10:52:48.517Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-03-10T10:52:50.057Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/versions 200
+[debug] [2026-03-10T10:52:50.057Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/versions {"name":"projects/399181650170/sites/jnapartments-baa7a/versions/08e267613ee20dce","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[jnapartments-baa7a]: beginning deploy... 
+[info] i  hosting[jnapartments-baa7a]: found 34 files in dist 
+[debug] [2026-03-10T10:52:50.078Z] [hosting] uploading with 200 concurrency
+[debug] [2026-03-10T10:52:50.107Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:50.107Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:50.109Z] [hosting] hash cache [ZGlzdA] stored for 34 files
+[debug] [2026-03-10T10:52:50.110Z] [hosting][hash queue][FINAL] {"max":25,"min":1,"avg":3.823529411764706,"active":0,"complete":34,"success":34,"errored":0,"retried":0,"total":34,"elapsed":30}
+[debug] [2026-03-10T10:52:50.110Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/399181650170/sites/jnapartments-baa7a/versions/08e267613ee20dce:populateFiles [none]
+[debug] [2026-03-10T10:52:50.110Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/399181650170/sites/jnapartments-baa7a/versions/08e267613ee20dce:populateFiles {"files":{"/_redirects":"64111ad6db6cd5f9af10182d76a79cb4e56998f78eaff35ea3804ffc15bfe736","/assets/images/README.txt":"d6c53dfbf47cfd6fcbce46183dabf34f58a7ee0fb20521f1d30ec78516f958a5","/assets/images/logo.png":"7b8fc5d0edafd31cf14b611ef82e8d79999835d64b4576dcb53b5e43514b2bac","/assets/images/JN Apartments/Meghalaya Tourism website link.docx":"3dd8c3f232cd934b30f808f3aa4baa1ab48520fe382450cfa46222e1e33e67ef","/assets/images/JN Apartments/5.JPG":"b88f5af76a8108873d85e4b51cb672f7f820dfe438db595396905e5bd6b662d3","/assets/images/JN Apartments/3.JPG":"fc9bd98809dbf03308b9463be625de5e380edbde88de61de438796bb3c780748","/assets/images/JN Apartments/2.JPG":"2af2f31f66c83f84c0e0a89ee40a554241d39ac3b3b76c7399717adae1c7aeff","/assets/images/JN Apartments/1.JPG":"3fec6b5aa7c54b56a1cbe47dde1a878cdf0777b322bd2b6d2ba73cdd8bacc29b","/assets/images/JN Apartments/Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Livingroom.jpg":"d8e93eaa0053dc3679b0e0d6c957d38e792d01146aa6f03e0210e89e31b761a5","/assets/images/JN Apartments/Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Kitchen.jpg":"bc74d61ed5a8901889459824738864998712babb6fac8498600b91c1899d01eb","/assets/images/JN Apartments/Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Bedroom_.jpg":"eb4706fb8c62c604a8ee8d192dfa83df0b4a145f656c1114ffcd9d8dbd6a2e60","/assets/images/JN Apartments/Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Bedroom.jpg":"526dbbcbec962e255847b498266f3a1a0c57eb922a14e23df227c003b7bac53a","/assets/images/JN Apartments/Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/2BHK@ Rs.4500-night/Bathroom.jpg":"65237ee1edba740814a0b175eea95e0938863c72a0557c3d5d7365e3e6d0f346","/assets/images/JN Apartments/Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/1BHK@ Rs.3000-night/Living room.jpg":"6e3b43aadc7f41a78abc32cc158c96f55eb37841bd301af3dd530541cb6242a9","/assets/images/JN Apartments/Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/1BHK@ Rs.3000-night/Kitchen.jpg":"f91679789d6401124174dc9592469ebf16df9873e1c53c9c9fbd9b133f4d4d46","/assets/images/JN Apartments/Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/1BHK@ Rs.3000-night/Bedroom.jpg":"643242e643ab8469a07666bb89eddc2e61cfb211be1031c11226295f398c9c10","/assets/images/JN Apartments/Room 201-204 (Deluxe Non-AC) 1BHK-₹3000-2BHK-₹4500-night/1BHK@ Rs.3000-night/Bathroom_.jpg":"65237ee1edba740814a0b175eea95e0938863c72a0557c3d5d7365e3e6d0f346","/assets/images/JN Apartments/Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Livingroom.jpg":"d8e93eaa0053dc3679b0e0d6c957d38e792d01146aa6f03e0210e89e31b761a5","/assets/images/JN Apartments/Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Kitchen.jpg":"bc74d61ed5a8901889459824738864998712babb6fac8498600b91c1899d01eb","/assets/images/JN Apartments/Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Bedroom_.jpg":"eb4706fb8c62c604a8ee8d192dfa83df0b4a145f656c1114ffcd9d8dbd6a2e60","/assets/images/JN Apartments/Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Bedroom.jpg":"526dbbcbec962e255847b498266f3a1a0c57eb922a14e23df227c003b7bac53a","/assets/images/JN Apartments/Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/Bathroom_.jpg":"65237ee1edba740814a0b175eea95e0938863c72a0557c3d5d7365e3e6d0f346","/assets/images/JN Apartments/Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/2BHK@ Rs. 4500-night/14.JPG":"80e6343eadadd3d4a51e017aa786a09f25013827e06338d29a50ea11a380f610","/assets/images/JN Apartments/Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Living room.jpg":"6e3b43aadc7f41a78abc32cc158c96f55eb37841bd301af3dd530541cb6242a9","/assets/images/JN Apartments/Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Kitchen.jpg":"f91679789d6401124174dc9592469ebf16df9873e1c53c9c9fbd9b133f4d4d46","/assets/images/JN Apartments/Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Bedroom.jpg":"643242e643ab8469a07666bb89eddc2e61cfb211be1031c11226295f398c9c10","/assets/images/JN Apartments/Room 101-104 (Deluxe Non-AC)1BHK ₹3000-2BHK₹4500-night/1BHK@ Rs.3000-night/Bathroom_.jpg":"65237ee1edba740814a0b175eea95e0938863c72a0557c3d5d7365e3e6d0f346","/index.html":"174963e051f450e14bf172291656dd6b3e7d5b2dc80e200ebc5f50c380f90951","/assets/index-3zA8GK8n.css":"2b946ef950041e5b141c08c0cd26bfa1b174d78d7a64a1421ec385f93f7fd8e0","/assets/images/JN Apartments/General Pictures (Reception, Lobby, Common Room)/Lobby.jpg":"88206b2dcac1a19b0af5d1b254f79c1502b7e67c09a810fc0ea507853e604524","/assets/images/JN Apartments/General Pictures (Reception, Lobby, Common Room)/Parking_(1).jpg":"9aa0fd2e0f94fd3f53fbf8654f23b152d925dc7439ed605a2cb278c97a31ab93","/assets/images/JN Apartments/General Pictures (Reception, Lobby, Common Room)/Reception_.jpg":"76f1efc355ee0ca4dfcd95321502ad3dd59ad58afe250470774ba8ddf07cd471","/assets/images/JN Apartments/General Pictures (Reception, Lobby, Common Room)/Parking_.jpg":"71a31a48eb6f51639bec8ae3413664de6fc42ebc879b5fa151d501d94d099b27","/assets/index-D6eEckGy.js":"efdd1ddfd0c4f9ac49bd3b613ee74166a5b685284df5314504d2aaa8da183273"}}
+[debug] [2026-03-10T10:52:50.868Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/399181650170/sites/jnapartments-baa7a/versions/08e267613ee20dce:populateFiles 200
+[debug] [2026-03-10T10:52:50.869Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/399181650170/sites/jnapartments-baa7a/versions/08e267613ee20dce:populateFiles {"uploadRequiredHashes":["174963e051f450e14bf172291656dd6b3e7d5b2dc80e200ebc5f50c380f90951","efdd1ddfd0c4f9ac49bd3b613ee74166a5b685284df5314504d2aaa8da183273","2b946ef950041e5b141c08c0cd26bfa1b174d78d7a64a1421ec385f93f7fd8e0"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files"}
+[debug] [2026-03-10T10:52:50.869Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:50.869Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:50.870Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:50.870Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:50.871Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:50.871Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:50.871Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/174963e051f450e14bf172291656dd6b3e7d5b2dc80e200ebc5f50c380f90951 [none]
+[debug] [2026-03-10T10:52:50.871Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/174963e051f450e14bf172291656dd6b3e7d5b2dc80e200ebc5f50c380f90951 [stream]
+[debug] [2026-03-10T10:52:50.873Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/efdd1ddfd0c4f9ac49bd3b613ee74166a5b685284df5314504d2aaa8da183273 [none]
+[debug] [2026-03-10T10:52:50.873Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/efdd1ddfd0c4f9ac49bd3b613ee74166a5b685284df5314504d2aaa8da183273 [stream]
+[debug] [2026-03-10T10:52:50.875Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/2b946ef950041e5b141c08c0cd26bfa1b174d78d7a64a1421ec385f93f7fd8e0 [none]
+[debug] [2026-03-10T10:52:50.875Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/2b946ef950041e5b141c08c0cd26bfa1b174d78d7a64a1421ec385f93f7fd8e0 [stream]
+[debug] [2026-03-10T10:52:50.876Z] [hosting][populate queue][FINAL] {"max":764,"min":764,"avg":764,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":769}
+[debug] [2026-03-10T10:52:50.876Z] [hosting] uploads queued: 3
+[info] i  hosting: uploading new files [0/3] (0%) 
+[debug] [2026-03-10T10:52:52.845Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/2b946ef950041e5b141c08c0cd26bfa1b174d78d7a64a1421ec385f93f7fd8e0 200
+[debug] [2026-03-10T10:52:52.845Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/2b946ef950041e5b141c08c0cd26bfa1b174d78d7a64a1421ec385f93f7fd8e0 [stream]
+[debug] [2026-03-10T10:52:52.957Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/174963e051f450e14bf172291656dd6b3e7d5b2dc80e200ebc5f50c380f90951 200
+[debug] [2026-03-10T10:52:52.957Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/174963e051f450e14bf172291656dd6b3e7d5b2dc80e200ebc5f50c380f90951 [stream]
+[debug] [2026-03-10T10:52:53.027Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/efdd1ddfd0c4f9ac49bd3b613ee74166a5b685284df5314504d2aaa8da183273 200
+[debug] [2026-03-10T10:52:53.027Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/jnapartments-baa7a/versions/08e267613ee20dce/files/efdd1ddfd0c4f9ac49bd3b613ee74166a5b685284df5314504d2aaa8da183273 [stream]
+[debug] [2026-03-10T10:52:53.027Z] [hosting][upload queue][FINAL] {"max":2158,"min":1976,"avg":2074,"active":0,"complete":3,"success":3,"errored":0,"retried":0,"total":3,"elapsed":2158}
+[info] i  hosting: upload complete 
+[info] +  hosting[jnapartments-baa7a]: file upload complete 
+[debug] [2026-03-10T10:52:53.027Z] [hosting] deploy completed after 2967ms
+[debug] [2026-03-10T10:52:53.028Z] [
+  {
+    "config": {
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "/api/ai",
+          "function": {
+            "functionId": "aiGenerate"
+          }
+        },
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "jnapartments-baa7a"
+    },
+    "version": "projects/399181650170/sites/jnapartments-baa7a/versions/08e267613ee20dce"
+  }
+]
+[info] i  hosting[jnapartments-baa7a]: finalizing version... 
+[debug] [2026-03-10T10:52:53.030Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:53.030Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:53.030Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/jnapartments-baa7a/locations/-/functions [none]
+[debug] [2026-03-10T10:52:53.958Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/jnapartments-baa7a/locations/-/functions 200
+[debug] [2026-03-10T10:52:53.958Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/jnapartments-baa7a/locations/-/functions {}
+[debug] [2026-03-10T10:52:53.959Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:53.959Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:53.960Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/jnapartments-baa7a/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2026-03-10T10:52:55.591Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/jnapartments-baa7a/locations/-/functions 200
+[debug] [2026-03-10T10:52:55.592Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/jnapartments-baa7a/locations/-/functions {}
+[warn] !  hosting[jnapartments-baa7a]: Unable to find a valid endpoint for function `aiGenerate`, but still including it in the config 
+[debug] [2026-03-10T10:52:55.594Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:55.594Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:55.595Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/versions/08e267613ee20dce updateMask=status%2Cconfig
+[debug] [2026-03-10T10:52:55.595Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/versions/08e267613ee20dce {"status":"FINALIZED","config":{"rewrites":[{"glob":"/api/ai","function":"aiGenerate"},{"glob":"**","path":"/index.html"}]}}
+[debug] [2026-03-10T10:52:56.306Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/versions/08e267613ee20dce 200
+[debug] [2026-03-10T10:52:56.307Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/versions/08e267613ee20dce {"name":"projects/399181650170/sites/jnapartments-baa7a/versions/08e267613ee20dce","status":"FINALIZED","config":{"rewrites":[{"glob":"/api/ai","function":"aiGenerate"},{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-03-10T10:52:51.895205Z","createUser":{"email":"classicmalsawma@gmail.com"},"finalizeTime":"2026-03-10T10:52:58.547718Z","finalizeUser":{"email":"classicmalsawma@gmail.com"}}
+[debug] [2026-03-10T10:52:56.307Z] [hosting] finalized version for jnapartments-baa7a:[object Object]
+[info] +  hosting[jnapartments-baa7a]: version finalized 
+[info] i  hosting[jnapartments-baa7a]: releasing new version... 
+[debug] [2026-03-10T10:52:56.307Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:56.307Z] Checked if tokens are valid: true, expires at: 1773141567984
+[debug] [2026-03-10T10:52:56.308Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/channels/live/releases versionName=projects%2F399181650170%2Fsites%2Fjnapartments-baa7a%2Fversions%2F08e267613ee20dce
+[debug] [2026-03-10T10:52:56.308Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/channels/live/releases {}
+[debug] [2026-03-10T10:52:57.346Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/channels/live/releases 200
+[debug] [2026-03-10T10:52:57.346Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/jnapartments-baa7a/channels/live/releases {"name":"projects/399181650170/sites/jnapartments-baa7a/channels/live/releases/1773139978927000","version":{"name":"projects/399181650170/sites/jnapartments-baa7a/versions/08e267613ee20dce","status":"FINALIZED","config":{"rewrites":[{"glob":"/api/ai","function":"aiGenerate"},{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-03-10T10:52:51.895205Z","createUser":{"email":"classicmalsawma@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIpm2Qvn4jo_HNkWuvgg8ijJ6irou1K9baJ1WLTg-wpA7JXvBi_"},"finalizeTime":"2026-03-10T10:52:58.547718Z","finalizeUser":{"email":"classicmalsawma@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIpm2Qvn4jo_HNkWuvgg8ijJ6irou1K9baJ1WLTg-wpA7JXvBi_"}},"type":"DEPLOY","releaseTime":"2026-03-10T10:52:58.927Z","releaseUser":{"email":"classicmalsawma@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIpm2Qvn4jo_HNkWuvgg8ijJ6irou1K9baJ1WLTg-wpA7JXvBi_"}}
+[debug] [2026-03-10T10:52:57.346Z] [hosting] release: {"name":"projects/399181650170/sites/jnapartments-baa7a/channels/live/releases/1773139978927000","version":{"name":"projects/399181650170/sites/jnapartments-baa7a/versions/08e267613ee20dce","status":"FINALIZED","config":{"rewrites":[{"glob":"/api/ai","function":"aiGenerate"},{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-03-10T10:52:51.895205Z","createUser":{"email":"classicmalsawma@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIpm2Qvn4jo_HNkWuvgg8ijJ6irou1K9baJ1WLTg-wpA7JXvBi_"},"finalizeTime":"2026-03-10T10:52:58.547718Z","finalizeUser":{"email":"classicmalsawma@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIpm2Qvn4jo_HNkWuvgg8ijJ6irou1K9baJ1WLTg-wpA7JXvBi_"}},"type":"DEPLOY","releaseTime":"2026-03-10T10:52:58.927Z","releaseUser":{"email":"classicmalsawma@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIpm2Qvn4jo_HNkWuvgg8ijJ6irou1K9baJ1WLTg-wpA7JXvBi_"}}
+[info] +  hosting[jnapartments-baa7a]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/jnapartments-baa7a/overview
+[info] Hosting URL: https://jnapartments-baa7a.web.app

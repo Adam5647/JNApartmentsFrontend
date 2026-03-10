@@ -75,6 +75,10 @@ function RatingBar({ score }: { score: number }) {
   );
 }
 
+function getFirstNameInitial(name: string) {
+  return name.trim().charAt(0).toUpperCase();
+}
+
 export default function TestimonialsPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-body">
@@ -177,13 +181,9 @@ export default function TestimonialsPage() {
 
                   {/* Header */}
                   <div className="flex items-start gap-4 mb-5">
-                    <img
-                      src={review.image}
-                      alt={review.name}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-13 h-13 w-12 h-12 rounded-full object-cover ring-2 ring-brand-500/30 flex-shrink-0"
-                    />
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-brand-400/30 bg-brand-500/15 text-lg font-semibold text-brand-200 ring-2 ring-brand-500/20">
+                      {getFirstNameInitial(review.name)}
+                    </div>
                     <div className="min-w-0">
                       <p className="font-semibold text-white text-base leading-tight">{review.name}</p>
                       <p className="text-slate-400 text-sm mt-0.5">{review.location}</p>
