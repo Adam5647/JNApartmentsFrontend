@@ -71,12 +71,10 @@ export default function ExperiencesSection() {
                 className="group md:col-span-7 md:row-span-2 relative overflow-hidden rounded-2xl sm:rounded-3xl cursor-pointer touch-manipulation"
               >
                 <div className="absolute inset-0">
-                  <motion.img
+                  <img
                     src={experiences[0].image}
                     alt={experiences[0].title}
-                    className="h-full w-full object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.8 }}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-transparent" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -139,12 +137,10 @@ export default function ExperiencesSection() {
               >
                 <div className="relative h-full min-h-[200px] sm:min-h-[240px]">
                   <div className="absolute inset-0">
-                    <motion.img
+                    <img
                       src={experiences[1].image}
                       alt={experiences[1].title}
-                      className="h-full w-full object-cover"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.8 }}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-transparent" />
                   </div>
@@ -187,12 +183,10 @@ export default function ExperiencesSection() {
               >
                 <div className="relative h-full min-h-[200px] sm:min-h-[240px]">
                   <div className="absolute inset-0">
-                    <motion.img
+                    <img
                       src={experiences[2].image}
                       alt={experiences[2].title}
-                      className="h-full w-full object-cover"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.8 }}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-transparent" />
                   </div>
