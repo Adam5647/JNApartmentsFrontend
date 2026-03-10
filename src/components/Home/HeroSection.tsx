@@ -22,7 +22,7 @@ export default function HeroSection() {
       {/* Accent line */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-brand-400/60 to-transparent hidden lg:block" />
 
-      <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 py-12 xs:py-14 sm:py-16 lg:py-20">
+      <div className="relative z-10 w-full max-w-[100rem] mx-auto px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 pt-24 xs:pt-28 pb-12 xs:pb-14 sm:pb-16 lg:pb-20 sm:pt-20 lg:pt-20">
         <div className="max-w-4xl">
           <motion.h1
             className="font-display text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-white leading-[1.05] tracking-tight"

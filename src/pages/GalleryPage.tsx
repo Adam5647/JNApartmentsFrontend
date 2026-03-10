@@ -119,30 +119,28 @@ export default function GalleryPage() {
           </div>
         </section>
 
-        {/* Category anchor nav — static to avoid scroll lag from sticky */}
+        {/* Category anchor nav — scrollable on phone with safe padding */}
         <nav
           className="border-b border-white/10 bg-slate-950/98"
           aria-label="Gallery sections"
         >
-          <div className={CONTAINER}>
-            <div className="flex gap-1 overflow-x-auto py-3 justify-center overscroll-x-contain">
+          <div className={`${CONTAINER} overflow-hidden`}>
+            <div className="flex gap-2 overflow-x-auto py-3 justify-start overscroll-x-contain scroll-smooth pl-0 pr-4 md:justify-center md:flex-wrap md:pr-0">
               <a
                 href="#featured"
-                className="shrink-0 px-4 py-2 rounded-lg font-body text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-colors"
+                className="shrink-0 px-4 py-2.5 rounded-lg font-body text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap"
               >
                 Featured
               </a>
-              {galleryCategories.map((cat) => {
-                return (
-                  <a
-                    key={cat.id}
-                    href={`#${cat.id}`}
-                    className="shrink-0 px-4 py-2 rounded-lg font-body text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-colors"
-                  >
-                    {cat.title}
-                  </a>
-                );
-              })}
+              {galleryCategories.map((cat) => (
+                <a
+                  key={cat.id}
+                  href={`#${cat.id}`}
+                  className="shrink-0 px-4 py-2.5 rounded-lg font-body text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap"
+                >
+                  {cat.title}
+                </a>
+              ))}
             </div>
           </div>
         </nav>

@@ -8,6 +8,8 @@ const NAV_LINKS = [
   { label: "Testimonials", to: "/testimonials" },
 ] as const;
 
+const LOGO_SRC = `${import.meta.env.BASE_URL}assets/images/logo.png`;
+
 export default function Nav() {
   const { pathname } = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,7 +40,7 @@ export default function Nav() {
         >
           {!logoError ? (
             <img
-              src="/assets/images/logo.png"
+              src={LOGO_SRC}
               alt="JN Apartments"
               className="h-14 w-auto object-contain sm:h-16"
               onError={() => setLogoError(true)}

@@ -31,11 +31,11 @@ export default function ConciergeSection() {
               Email Concierge
             </a>
             <a
-              href="tel:+919874563210"
+              href="tel:+918415886572"
               className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-6 py-3.5 font-body text-sm font-medium text-white hover:bg-white/10 hover:border-brand-400/50 transition-colors"
             >
               <FiPhone className="w-4 h-4 text-brand-400" />
-              Call +91 9874 563 210
+              Call +91 84158 86572
             </a>
           </div>
         </motion.div>

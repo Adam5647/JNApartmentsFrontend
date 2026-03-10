@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
 import { FiMail, FiPhone, FiInstagram, FiYoutube } from "react-icons/fi";
 import { FaFacebookF } from "react-icons/fa";
+
+const LOGO_SRC = `${import.meta.env.BASE_URL}assets/images/logo.png`;
 
 const SOCIAL = [
   { label: "Instagram", href: "https://instagram.com", icon: FiInstagram },
@@ -14,6 +17,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {/* Brand + address */}
           <div className="lg:col-span-2">
+            <Link
+              to="/"
+              className="inline-flex items-center"
+              aria-label="JN Apartments home"
+            >
+              <img
+                src={LOGO_SRC}
+                alt="JN Apartments"
+                className="h-16 w-auto object-contain"
+              />
+            </Link>
             <h3 className="font-display text-xl font-semibold text-white">
               JN Apartments
             </h3>
@@ -42,11 +56,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+919874563210"
+                  href="tel:+918415886572"
                   className="inline-flex items-center gap-2 font-body text-sm text-slate-400 hover:text-white transition-colors"
                 >
                   <FiPhone className="w-4 h-4 text-brand-400/80" />
-                  +91 9874 563 210
+                  +91 84158 86572
                 </a>
               </li>
             </ul>
