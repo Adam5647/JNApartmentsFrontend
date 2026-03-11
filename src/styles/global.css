@@ -57,3 +57,27 @@ body {
     min-height: min(42vh, 380px);
   }
 }
+
+/* Trustindex reviews section: hide their nav arrows so our custom ones are used */
+#trustindex-reviews .ti-controls button,
+#trustindex-reviews .ti-controls a,
+#trustindex-reviews .ti-controls [class*="arrow"],
+#trustindex-reviews .ti-controls [class*="prev"],
+#trustindex-reviews .ti-controls [class*="next"] {
+  visibility: hidden !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+
+/* Hide "Verified by Trustindex" / Trustindex credit in reviews section */
+#trustindex-reviews a[href*="trustindex"],
+#trustindex-reviews .ti-footer,
+#trustindex-reviews [class*="ti-credit"],
+#trustindex-reviews [class*="powered"],
+#trustindex-reviews [class*="verified"] {
+  display: none !important;
+}

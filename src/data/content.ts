@@ -399,15 +399,6 @@ export const sustainabilityHighlights = [
   { label: "Housekeeping", value: "On request", description: "Flexible cleaning schedules" },
 ];
 
-/** Home Voices section: testimonial carousel (quote, name, role). */
-export const testimonials = [
-  { quote: "Clean rooms, helpful staff, and reliable Wi‑Fi. Perfect base for our Shillong work trip.", name: "Rohit M.", role: "Product Manager" },
-  { quote: "Loved how we could take a full 2BHK for family while friends used a 1BHK next door.", name: "Sanchita & Arpan", role: "Family travelers" },
-  { quote: "Parking and quick access to the lobby made late-night arrivals stress-free.", name: "Amit P.", role: "Consultant" },
-  { quote: "Kitchenettes were stocked enough for breakfast; housekeeping was responsive.", name: "Neha R.", role: "Remote worker" },
-  { quote: "Transparent pricing and clean bathrooms. Will recommend for small groups.", name: "Kabir L.", role: "Trip lead" },
-];
-
 export const amenities = [
   "Dedicated reception & concierge",
   "Gated parking on-site",
@@ -452,134 +443,12 @@ export const services = [
   },
 ];
 
-/** Static testimonials for Testimonials page (with optional image URL) */
-export const testimonialsPageList = [
-  {
-    id: 1,
-    name: "Rohit M.",
-    role: "Product Manager",
-    quote:
-      "Clean rooms, helpful staff, and reliable Wi‑Fi. Perfect base for our Shillong work trip.",
-    rating: 5,
-    image: asset("1.JPG"),
-  },
-  {
-    id: 2,
-    name: "Sanchita & Arpan",
-    role: "Family travelers",
-    quote:
-      "Loved how we could take a full 2BHK for family while friends used a 1BHK next door.",
-    rating: 5,
-    image: asset("2.JPG"),
-  },
-  {
-    id: 3,
-    name: "Amit P.",
-    role: "Consultant",
-    quote:
-      "Parking and quick access to the lobby made late-night arrivals stress-free.",
-    rating: 5,
-    image: asset("3.JPG"),
-  },
-];
-
-/** Overall rating summary for Testimonials page */
-export const testimonialsOverallRating = {
-  score: 4.8,
-  totalReviews: 284,
-};
-
-/** Detailed rating breakdown by category */
-export const testimonialsRatingBreakdown = [
-  { category: "Overall Experience", score: 4.9, count: 284 },
-  { category: "Service Quality", score: 4.8, count: 284 },
-  { category: "Location", score: 4.7, count: 284 },
-  { category: "Cleanliness", score: 4.9, count: 284 },
-  { category: "Value for Money", score: 4.6, count: 284 },
-];
-
-/** Detailed guest reviews with tags for Testimonials page */
-export const testimonialsDetailedReviews = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    location: "New York, USA",
-    stayType: "Short Stay",
-    date: "September 2025",
-    rating: 5,
-    quote:
-      "Absolutely stunning property with breathtaking views of the Khasi Hills. The staff went above and beyond to make our stay memorable. The attention to detail in the architecture and the warmth of the hospitality made this one of the best travel experiences we've ever had.",
-    tags: ["Exceptional Service", "Stunning Views", "Cultural Experience"],
-    image: asset("1.JPG"),
-  },
-  {
-    id: 2,
-    name: "Rajesh Kumar",
-    location: "Mumbai, India",
-    stayType: "Long-term Rental",
-    date: "August 2025",
-    rating: 5,
-    quote:
-      "Living at JN Apartments has been a game-changer for my work-life balance. The peaceful environment, modern amenities, and proximity to nature help me stay productive while feeling completely relaxed. The maintenance team is incredibly responsive.",
-    tags: ["Peaceful Environment", "Modern Amenities", "Responsive Maintenance"],
-    image: asset("2.JPG"),
-  },
-  {
-    id: 3,
-    name: "Maria Rodriguez",
-    location: "Barcelona, Spain",
-    stayType: "Short Stay",
-    date: "July 2025",
-    rating: 5,
-    quote:
-      "The botanical loft was a revelation! Waking up to the sounds of nature while being surrounded by such thoughtful design elements made our trip truly special. The hydroponic wall and aroma library were unexpected delights that enhanced our stay beautifully.",
-    tags: ["Unique Design", "Nature Integration", "Thoughtful Amenities"],
-    image: asset("3.JPG"),
-  },
-  {
-    id: 4,
-    name: "David Chen",
-    location: "Singapore",
-    stayType: "Business Stay",
-    date: "June 2025",
-    rating: 5,
-    quote:
-      "Perfect for business travelers. The high-speed internet, workspace, and business lounge made it easy to stay productive. The location is ideal for meetings in Shillong, and the food recommendations from the concierge were spot-on.",
-    tags: ["Business Facilities", "Prime Location", "Local Expertise"],
-    image: asset("5.JPG"),
-  },
-  {
-    id: 5,
-    name: "Priya Sharma",
-    location: "Delhi, India",
-    stayType: "Family Stay",
-    date: "May 2025",
-    rating: 5,
-    quote:
-      "Our family vacation was made perfect by the spacious family suite and the children's amenities. The staff treated our kids like royalty, and the location provided easy access to all the family-friendly attractions in Meghalaya.",
-    tags: ["Family-Friendly", "Spacious Accommodations", "Child-Centric Service"],
-    image: asset("General Pictures (Reception, Lobby, Common Room)/Lobby.jpg"),
-  },
-  {
-    id: 6,
-    name: "Michael Thompson",
-    location: "London, UK",
-    stayType: "Extended Stay",
-    date: "April 2025",
-    rating: 5,
-    quote:
-      "The long-term rental program exceeded all expectations. From the seamless move-in process to the ongoing support, everything was handled professionally. The community's focus on sustainability and local culture integration is truly commendable.",
-    tags: ["Seamless Process", "Ongoing Support", "Cultural Integration"],
-    image: asset("General Pictures (Reception, Lobby, Common Room)/Reception_.jpg"),
-  },
-];
-
 /** Guest Stories for Testimonials page */
 export const testimonialsGuestStories = [
   {
     id: 1,
     title: "A Photographer's Paradise",
-    author: "Emma Wilson",
+    author: "Banaibor Kharmynthon",
     excerpt:
       "The panoramic views and natural light in the Skyline Penthouse provided the perfect backdrop for my photography workshop. The residents were welcoming and shared local insights that made my project truly authentic.",
     image: asset("1.JPG"),
@@ -587,7 +456,7 @@ export const testimonialsGuestStories = [
   {
     id: 2,
     title: "Digital Nomad's Dream",
-    author: "Alex Chen",
+    author: "Mao Oga",
     excerpt:
       "Three months in the Botanical Loft transformed how I work. The blend of nature, technology, and community created an environment where creativity flourished and work became more than just a task.",
     image: asset(`${LOWER_1BHK}/Living room.jpg`),
@@ -595,7 +464,7 @@ export const testimonialsGuestStories = [
   {
     id: 3,
     title: "Family Roots Rediscovered",
-    author: "Ananya Patel",
+    author: "Wilson Kharkongor",
     excerpt:
       "Bringing my children to experience their ancestral home state was magical. JN Apartments provided the perfect modern comfort while connecting us deeply with Meghalaya's rich cultural heritage.",
     image: asset("General Pictures (Reception, Lobby, Common Room)/Lobby.jpg"),

@@ -3,7 +3,6 @@ import HeroSection from "../components/Home/HeroSection";
 import ExperiencesSection from "../components/Home/ExperiencesSection";
 import OurPromiseSection from "../components/Home/OurPromiseSection";
 import CommunitySection from "../components/Home/CommunitySection";
-import VoicesSection from "../components/Home/VoicesSection";
 import BookSection from "../components/Home/BookSection";
 import ConciergeSection from "../components/Home/ConciergeSection";
 import Footer from "../components/Home/Footer";
@@ -16,7 +15,6 @@ export default function HomePage() {
       <ExperiencesSection />
       <OurPromiseSection />
       <CommunitySection />
-      <VoicesSection />
       <BookSection />
       <ConciergeSection />
       <Footer />

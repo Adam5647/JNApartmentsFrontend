@@ -32,8 +32,9 @@ export default function Footer() {
               JN Apartments
             </h3>
             <p className="mt-3 text-slate-400 text-sm leading-relaxed max-w-sm">
-              Sky city residency, Police Bazaar, Shillong · Meghalaya, India
+              Pine Tree Lodge, Mawpat, Meghalaya 793006
             </p>
+            <p className="mt-1 text-slate-500 text-xs">Areas served: Mawpat</p>
             <p className="mt-6 text-slate-500 text-xs">
               © 2026 JN Apartments. All rights reserved.
             </p>
